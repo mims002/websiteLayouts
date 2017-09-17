@@ -1,4 +1,4 @@
-var daysEntry = [
+[
 
 	{
 		"Day" = "Monday",
@@ -22,7 +22,7 @@ var daysEntry = [
 
 
 
-];
+]
 	
 
 

@@ -5,7 +5,7 @@
 		"Date": "20",
 		"Event": "Sample Event",
 		"Time":"10:30pm - 11pm",
-		"Description" : "Sample Description",
+		"Description" : "Sample Description"
 		
 	},
 	{	
@@ -13,7 +13,7 @@
 		"Date": "20",
 		"Event": "Sample Event",
 		"Time": "10:30pm - 11pm",
-		"Description": "Sample Description",
+		"Description": "Sample Description"
 	}
 
 

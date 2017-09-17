@@ -104,11 +104,11 @@ body >h1{
 }
 /*info*/
 .calendar_entries_right{
-	float: left;
+	float: right;
 	
-	
+	width: 75%;
 	height: 120px;
-	margin-left: 10px;
+	margin-left: 5px;
 	
 	text-shadow: 1px 1px 5px black;
 	color: white;
@@ -154,9 +154,9 @@ body >h1{
 	
 	/*info*/
 	.calendar_entries_right{
-		float: left;
+		float: right;
 		
-		width: 75%;
+		width: 74%;
 
 		border: 0;
 

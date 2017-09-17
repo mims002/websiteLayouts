@@ -99,7 +99,7 @@ body >h1{
 	line-height:60px;
 	font-size: 3em;
 	text-align: center;
-	vertical-align: middle;
+	
 }
 /*info*/
 .calendar_entries_right{
@@ -114,8 +114,8 @@ body >h1{
 	border-left: 5px solid white;
 	
 	
-	font-size: 2em;
-	text-align: center;
+	font-size: 1.2em;
+	text-align: left;
 	
 }
 
@@ -145,8 +145,21 @@ body >h1{
 
 	/*Date*/
 	.calendar_entries_left{
+
+		width: 23%;
+		border-right: 5px solid white;
 		
-		font-size: 2.3em;
+	}
+	
+	/*info*/
+	.calendar_entries_right{
+		float: left;
+		
+		width: 75%;
+
+		border: 0;
+
+		text-align: left;
 		
 		
 		

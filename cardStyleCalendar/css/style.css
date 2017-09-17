@@ -37,10 +37,10 @@ body >h1{
 /*calender month area*/
 .calendar_outer > h1{
 	text-align: center;
-	height: 90px;
+	height: 160px;
 	
 	font-size: 2.2em;
-	line-height: 90px;
+	line-height: 160px;
 	margin: 0;
 	
 	color: white;
@@ -69,14 +69,14 @@ body >h1{
 /*calender entries*/
 .calendar_entries{
 	
-	width: 90%;
-	height: 100px;
+	width: 98%;
+	height: 120px;
 	margin: 0 auto;
 	overflow:auto;
 	
 	background-color: rgba(227,118,118,1);
-	border: 5px solid white;
-	border-radius: 20px;
+	border: 2px solid white;
+	border-radius: 30px;
 	
 	margin-bottom:6px;
 	
@@ -88,15 +88,16 @@ body >h1{
 .calendar_entries_left{
 	
 	float:left;
-	display: table;
+
 	width: 20%;
-	height: 100px;
+	height: 120px;
+	
 	
 	text-shadow: 1px 1px 5px black;
 	color: white;
 	
-	
-	font-size: 1.5em;
+	line-height:60px;
+	font-size: 3em;
 	text-align: center;
 	vertical-align: middle;
 }
@@ -104,8 +105,9 @@ body >h1{
 .calendar_entries_right{
 	float: left;
 	margin-left: 2px;
-	width: 78%;
-	height: 100px;
+	
+	height: 120px;
+	
 	
 	text-shadow: 1px 1px 5px black;
 	color: white;
@@ -135,11 +137,18 @@ body >h1{
 	}
 	
 	/*calender entries*/
-.calendar_entries{
-	
-	font-size: auto;
+	.calendar_entries{
+		
+		font-size: 90%;
 
-}
+	}
+
+	/*Date*/
+	.calendar_entries_left{
+		
+		font-size: 2.5em;
+		
+	}
 
 }
 

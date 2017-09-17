@@ -21,8 +21,27 @@ body >h1{
 	font-size: 2.5em;
 	border-bottom: 3px solid rgba(0,0,10,.2);
 }
-
-.calendar{
+.space{
+	width: 100%;
+	height: 20px;
+}
+.impact{
+	font-weight: bold;
+	font-size: 110%;
+}
+.depact{
+	
+	font-size: 90%;
+}
+.month{
+	
+	line-height: 120px;
+	text-align: center;
+	font-size: 3.5em;
+	color : White;
+	margin-left: 10px;
+}
+#calendar{
 	
 }
 /*styles the outer layer of the calendar*/
@@ -54,7 +73,7 @@ body >h1{
 
 
 /*calender outer*/
-.calendar_inner{
+#calendar_inner{
 	
 	width: 90%;
 	margin: 0 auto;
@@ -92,7 +111,7 @@ body >h1{
 	height: 120px;
 	
 	
-	text-shadow: 1px 1px 5px black;
+	
 	color: white;
 	font-family: 'Anton', sans-serif;
 	
@@ -106,14 +125,14 @@ body >h1{
 .calendar_entries_right{
 	float: right;
 	
-	width: 75%;
+	width: 78%;
 	height: 120px;
 	margin-left: 5px;
 	
-	text-shadow: 1px 1px 5px black;
+	
 	color: white;
 	
-	
+
 	
 	font-size: 1.2em;
 	text-align: left;

@@ -1,28 +1,34 @@
-[
-
-	{
-		"Day" : "Monday",
-		"Date": "20",
-		"Event": "Sample Event",
-		"Time":"10:30pm - 11pm",
-		"Description" : "Sample Description"
+{
+	"numDays" : 2,
+	
+	"daysEntry": [
+		{
+			"month":"September",
+			"day" : "Fri",
+			"date": "18",
+			"event":"Fun Stuff",
+			"time": "10:30pm - 11pm",
+			"location": "JC",
+			"details" :"dfgss vdsv dsfds fds fdsf " 
+			
+		},
+		{	
+			"month":"Sep",
+			"day" : "Fri",
+			"day" : "Mon",
+			"date": "20",
+			"event":"Boring Stuff",
+			"time": "10:30pm - 11pm",
+			"location": "RB",
+			"details" :"jaklfjlkdf sdjklfjsd fdsklfj fjklsdjflkdsjfhjlsg" 
+			
+		}]
 		
-	},
-	{	
-		"Day" : "Monday",
-		"Date": "20",
-		"Event": "Sample Event",
-		"Time": "10:30pm - 11pm",
-		"Description": "Sample Description"
-	}
-
-
-]
+		
 	
 
 
-
-
+}
 
 
 

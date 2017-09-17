@@ -72,7 +72,7 @@ body >h1{
 	
 	height: 120px;
 	margin: 0 auto;
-	overflow:auto;
+	overflow:hidden;
 	
 	background-color: rgba(227,118,118,1);
 	border: 2px solid white;
@@ -92,6 +92,7 @@ body >h1{
 	
 	text-shadow: 1px 1px 5px black;
 	color: white;
+	font-family: 'Anton', sans-serif;
 	
 	line-height:60px;
 	font-size: 3em;
@@ -143,7 +144,9 @@ body >h1{
 	/*Date*/
 	.calendar_entries_left{
 		
-		font-size: 2.5em;
+		font-size: 2.3em;
+		
+		
 		
 	}
 

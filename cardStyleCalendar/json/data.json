@@ -52,6 +52,16 @@
 			"details" :"Learn more about ISA, become a member and buy ticket to Garba" 
 			
 		}
+		{	
+			"month":"September",
+			"day" : "Fri",
+			"date": "22",
+			"event":"Raas Garba",
+			"time": "6:30-11pm",
+			"location": "HUB Ballroom",
+			"details" :"Come join us for a night of energetic and playful dancing. We are selling tickets for a discounted price this week on Monday, Tuesday, and Wednesday! " 
+			
+		}
 		]
 		
 		

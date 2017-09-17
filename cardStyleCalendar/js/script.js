@@ -3,8 +3,8 @@ var request;
 
 $(function(){
 	request = new XMLHttpRequest();
-	//request.open("GET", "https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data.json");
-	request.open("GET", "json/data.json");
+	request.open("GET", "https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data.json");
+	//request.open("GET", "json/data.json");
 	
 	request.onload = xmlRequestData;
 	
@@ -108,7 +108,7 @@ function addDayInOrder($divContainer, month, day){
 	}
 	
 	for(var i = 0; i<l; i++){
-		console.log($("#calendar_inner").children().find("."+month));
+		console.log($("#calendar_inner").children().find("."+month)==0);
 	}
 	
 	console.log(l);

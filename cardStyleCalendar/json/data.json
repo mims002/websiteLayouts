@@ -1,28 +1,58 @@
 {
-	"numDays" : 2,
+	"numDays" : 5,
 	
 	"daysEntry": [
 		{
 			"month":"September",
-			"day" : "Fri",
+			"day" : "Mon",
 			"date": "18",
-			"event":"Fun Stuff",
-			"time": "10:30pm - 11pm",
-			"location": "JC",
-			"details" :"dfgss vdsv dsfds fds fdsf " 
+			"event":"Kiosking",
+			"time": "2-4pm",
+			"location": "JC - Kiosk B",
+			"details" :"Learn more about ISA, become a member and buy ticket to Garba" 
 			
 		},
 		{	
-			"month":"Sep",
-			"day" : "Fri",
-			"day" : "Mon",
-			"date": "20",
-			"event":"Boring Stuff",
-			"time": "10:30pm - 11pm",
-			"location": "RB",
-			"details" :"jaklfjlkdf sdjklfjsd fdsklfj fjklsdjflkdsjfhjlsg" 
+			"month":"September",
+			"day" : "Tue",
+			"date": "19",
+			"event":"Kiosking",
+			"time": "3-4pm",
+			"location": "JC - Kiosk B",
+			"details" :"Learn more about ISA, become a member and buy ticket to Garba" 
 			
-		}]
+		},
+		{	
+			"month":"September",
+			"day" : "Wed",
+			"date": "20",
+			"event":"Kiosking",
+			"time": "2-4pm",
+			"location": "JC - Kiosk E",
+			"details" :"Learn more about ISA, become a member and buy ticket to Garba" 
+			
+		},
+		{	
+			"month":"September",
+			"day" : "Thu",
+			"date": "21",
+			"event":"Kiosking",
+			"time": "2-4pm",
+			"location": "JC - Kiosk B",
+			"details" :"Learn more about ISA, become a member and buy ticket to Garba" 
+			
+		},
+		{	
+			"month":"September",
+			"day" : "Fri",
+			"date": "22",
+			"event":"Kiosking",
+			"time": "1-3pm",
+			"location": "JC - Kiosk B",
+			"details" :"Learn more about ISA, become a member and buy ticket to Garba" 
+			
+		}
+		]
 		
 		
 	

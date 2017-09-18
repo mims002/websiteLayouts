@@ -1,5 +1,5 @@
 {
-	"numDays" : 5,
+	"numDays" : 6,
 	
 	"daysEntry": [
 		{
@@ -51,7 +51,7 @@
 			"location": "JC - Kiosk B",
 			"details" :"Learn more about ISA, become a member and buy ticket to Garba" 
 			
-		}
+		},
 		{	
 			"month":"September",
 			"day" : "Fri",

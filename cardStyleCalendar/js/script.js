@@ -108,7 +108,7 @@ function addDayInOrder($divContainer, month, day){
 	}
 	
 	for(var i = 0; i<l; i++){
-		console.log($("#calendar_inner").eq(i).is("."+month));
+		//console.log($("#calendar_inner").eq(i).is("."+month));
 	}
 	
 	console.log(l);

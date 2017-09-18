@@ -1,25 +1,28 @@
 /* Style fle- CSS */
-/*v1.2*/
+/*v1.3*/
 
 /*Entire page attributes*/
-body{
+.body{
 	background-color: #F0F7FA;
 	//background-color: #8F8888;
 	
 	border-bottom: 5px solid green;
-	padding-bottom: 200px;
+	
 	max-width: 900px;
-	min-width: 400px;
+	min-width: 300px;
 	margin: 0 auto;
 	
 	font-size: 100%;
 	
 }
 /*Page Title*/
-body >h1{
+.body >h1{
 	color: back;
 	font-size: 2.5em;
 	border-bottom: 3px solid rgba(0,0,10,.2);
+}
+ br {
+	line-height: 100%;
 }
 .space{
 	width: 100%;
@@ -28,6 +31,8 @@ body >h1{
 .impact{
 	font-weight: bold;
 	font-size: 110%;
+	
+	
 }
 .depact{
 	
@@ -35,7 +40,7 @@ body >h1{
 }
 .month{
 	
-	line-height: 120px;
+	line-height: 100px;
 	text-align: center;
 	font-size: 3.5em;
 	color : White;
@@ -46,7 +51,7 @@ body >h1{
 }
 /*styles the outer layer of the calendar*/
 .calendar_outer{
-	width: 90%;
+	width: 98%;
 	margin: 0 auto;
 	max-width: 800px;
 	
@@ -54,13 +59,13 @@ body >h1{
 	
 }
 
-/*calender month area*/
+/*calender title*/
 .calendar_outer > h1{
 	text-align: center;
-	height: 160px;
+	height: 120px;
 	
-	font-size: 2.2em;
-	line-height: 160px;
+	font-size: 2.8em;
+	line-height: 120px;
 	margin: 0;
 	
 	color: white;
@@ -75,14 +80,14 @@ body >h1{
 /*calender outer*/
 #calendar_inner{
 	
-	width: 90%;
+	width: 98%;
 	margin: 0 auto;
 	max-width: 800px;
 	
 	box-shadow: 0px 1px 5px black;
 	border-radius:  0px 0px 20px 20px;
 	background-color: rgba(255,255,255,1);
-	padding-bottom: 100px;
+	padding-bottom: 50px;
 	
 
 }
@@ -91,7 +96,7 @@ body >h1{
 .calendar_entries{
 	
 	
-	height: 120px;
+	height: 100px;
 	margin: 0 auto;
 	
 	
@@ -106,17 +111,19 @@ body >h1{
 .calendar_entries_left{
 	
 	float:left;
+	
 
 	width: 20%;
-	height: 120px;
+	height: 100px;
+	line-height: 120%;
 	
 	
 	
 	color: white;
 	font-family: 'Anton', sans-serif;
 	
-	line-height:60px;
-	font-size: 3em;
+	
+	font-size: 2.5em;
 	text-align: center;
 	border-right: 5px solid white;
 	
@@ -126,15 +133,16 @@ body >h1{
 	float: right;
 	
 	width: 78%;
-	height: 120px;
+	height: 100px;
+	
 	margin-left: 5px;
 	
-	
+	overflow: auto;
 	color: white;
 	
-
+	line-height: 135%;
 	
-	font-size: 1.2em;
+	font-size: 1.15em;
 	text-align: left;
 	
 }
@@ -143,6 +151,7 @@ body >h1{
 /* Ubuntu font family*/
 .font_ubuntu{
 	font-family:'Ubuntu', sans-serif;
+	
 }
 
 
@@ -151,15 +160,25 @@ body >h1{
 
 
 /*Responsive Styles small screen*/
-@media screen and (max-width : 760px){
+@media screen and (max-width : 760px) and (min-width: 412px){
 	body{
 		
+	}
+	
+	/*calender outer*/
+	#calendar_inner{
+
+		padding-bottom: 20px;
+		
+
 	}
 	
 	/*calender entries*/
 	.calendar_entries{
 		
-		font-size: 90%;
+		font-size: 85%;
+		height: 90px;
+
 
 	}
 
@@ -168,6 +187,7 @@ body >h1{
 
 		width: 23%;
 		border-right: 5px solid white;
+		height: 90px;
 		
 	}
 	
@@ -178,8 +198,72 @@ body >h1{
 		width: 74%;
 
 		border: 0;
-
+		
 		text-align: left;
+		height: 90px;
+		
+		
+		
+	}
+
+}
+/*Responsive Styles phones*/
+@media screen and (max-width : 412px){
+	body{
+		
+	}
+	.calendar_outer {
+		min-width: 310px;
+	}
+	/*calender title*/
+	.calendar_outer > h1{
+		text-align: center;
+		height: 100px;
+		
+		font-size: 2.5em;
+		line-height: 100px;
+	}
+	/*calender outer*/
+	#calendar_inner{
+
+		padding-bottom: 20px;
+		min-width: 310px;
+		
+
+	}
+	
+	/*calender entries*/
+	.calendar_entries{
+		
+		font-size: 70%;
+		height: 90px;
+		min-width: 300px;
+
+
+	}
+
+	/*Date*/
+	.calendar_entries_left{
+
+		width: 18%;
+		border-right: 5px solid white;
+		height: 90px;
+		line-height: 150%;
+		
+		
+		
+	}
+	
+	/*info*/
+	.calendar_entries_right{
+		float: right;
+		
+		width: 79%;
+
+		border: 0;
+		margin:0;
+		text-align: left;
+		height: 90px;
 		
 		
 		
@@ -187,23 +271,4 @@ body >h1{
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

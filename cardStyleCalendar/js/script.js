@@ -3,8 +3,8 @@ var request;
 
 $(function(){
 	request = new XMLHttpRequest();
-	//request.open("GET", "https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data.json");
-	request.open("GET", "json/data.json");
+	request.open("GET", "https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data.json");
+	//request.open("GET", "json/data.json");
 	
 	request.onload = xmlRequestData;
 	

@@ -14,9 +14,9 @@ var request;
 
 $(function(){
 	request = new XMLHttpRequest();
-	request.open("GET", "https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data1.json");
+	request.open("GET", "https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data.json");
 	//request.open("GET", "https://googledrive.com/host/0B-u62Mq0rwlkSjZNWFV2UVZUQ3c");
-	//request.open("GET", "json/data1.json");
+	//request.open("GET", "json/data.json");
 	
 	request.onload = xmlRequestData;
 	
@@ -40,7 +40,7 @@ function xmlRequestData(){
 function renderHTML(data) {
   var htmlString = "";
   
-  var day, date, eventDetail, eventLocation, eventTime, eventName, month;
+  var day, date, eventDetail, eventLocation, eventTime, eventName, month, year;
 
   for(var i=0; i< data.numDays; i++){
 	  
@@ -52,11 +52,12 @@ function renderHTML(data) {
 	  eventName = data.daysEntry[i].event;
 	  month = data.daysEntry[i].month;
 	  
-
+	  year = ((month.split(" ")).length>=2) ? parseInt(month.split(" ")[1]) : currentYear;
 	  
+	  	  
 	  var description = [eventName, eventTime, eventLocation, eventDetail ];
 	  
-	  createDaysEntry(day,date,month, createDescription(description));
+	  createDaysEntry(day,date,month, year, createDescription(description));
 	  
   }
   
@@ -77,16 +78,16 @@ function createDescription(d){
 	return inner;
 }
 
-function createDaysEntry(day,date,month,description){
+function createDaysEntry(day,date,month,year, description){
 	//creates the divs to the calendar entry
 	var $divContainer = $("<div>", {"class":"calendar_entries"});
 	var $divDate = $("<div>", {"class":"calendar_entries_left"});
 	var $divInfo = $("<div>", {"class":"calendar_entries_right"});
-	
+	console.log( date);
 	//greys out the boc if the month or day has passed
-	if( (parseInt(month.split(" ")[1]) < currentYear) ||
-		(parseInt(month.split(" ")[1]) == currentYear && monthOrder(month.split(" ")[0]) < currentMonth)  || 
-		(monthOrder(month.split(" ")[0]) == currentMonth && date < currentDay) ){
+	if( (year < currentYear) ||
+		(year == currentYear && monthOrder(month.split(" ")[0]) < currentMonth)  || 
+		(year == currentYear && monthOrder(month.split(" ")[0]) == currentMonth && date < currentDay) ){
 			
 			$divContainer.css("color","grey");
 		}
@@ -108,18 +109,18 @@ function createDaysEntry(day,date,month,description){
 	//adds a unique class to it 
 	$divContainer.attr({"class":"calendar_entries "+date+" "+month});
 	
-	addDayInOrder($divContainer,month,date);
+	addDayInOrder($divContainer,year,month,date);
 	
 }
 
 //adds the date in order 
 //also calls add month if nesaasary
-function addDayInOrder($divContainer, month, date){
+function addDayInOrder($divContainer,year, month, date){
 	
 	if(DEBUG) console.log("Starting adding------------");
 	
 	//adds the month and return the div
-	var $parentMonth = getMonth(month);
+	var $parentMonth = getMonth(year,month);
 	
 	
 	var $prevdate = $parentMonth;
@@ -138,7 +139,7 @@ function addDayInOrder($divContainer, month, date){
 			
 		var last_date = parseInt(s[1]);
 		
-		console.log(date,last_date);
+		
 		if(date<last_date){
 			$prevdate.before($divContainer);
 			if(DEBUG) console.log("END adding----------------");
@@ -156,16 +157,15 @@ function addDayInOrder($divContainer, month, date){
 
 //adds the month if it doesn't exits
 //returns the month div 
-function getMonth(month){
+function getMonth(year,month){
 	
 	var monthNum = monthOrder((month).split(" ")[0]);
-	var yearNum  = parseInt((month).split(" ")[1]);
-	var formattedMonthStr = getFullMonthName(monthNum)+" "+ yearNum;
+	var formattedMonthStr = getFullMonthName(monthNum)+" "+ year;
 	console.log(formattedMonthStr);
-	var fromattedMonthDisplay = (yearNum == currentYear) ? getFullMonthName(monthNum) :  formattedMonthStr;
+	var fromattedMonthDisplay = (year == currentYear) ? getFullMonthName(monthNum) :  formattedMonthStr;
 
 	
-	var $month = $("div."+"type_month."+getFullMonthName(monthNum)+"."+ yearNum+".calendar_entries");
+	var $month = $("div."+"type_month."+getFullMonthName(monthNum)+"."+ year+".calendar_entries");
 
 	
 	
@@ -200,8 +200,8 @@ function getMonth(month){
 			var yearTemp = parseInt(s[3]);
 			
 			//checks year and month
-			if(yearTemp>yearNum) continue;
-			if(yearTemp==yearNum && monthOrder(monthTempStr)> monthNum) continue ;
+			if(yearTemp>year) continue;
+			if(yearTemp==year && monthOrder(monthTempStr)> monthNum) continue ;
 		
 			
 			$month = addToDivAfter(

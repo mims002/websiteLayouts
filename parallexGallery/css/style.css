@@ -47,7 +47,7 @@ h1{
 	
 	background-repeat: no-repeat; 
 	
-	background-size: auto 100%;
+	background-size: cover;
 	background-attachment: fixed;
 	
 	text-align:right;

@@ -14,7 +14,7 @@ var request;
 
 $(function(){
 	request = new XMLHttpRequest();
-	request.open("GET", "https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data.json");
+	request.open("GET", "https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data1.json");
 	//request.open("GET", "https://googledrive.com/host/0B-u62Mq0rwlkSjZNWFV2UVZUQ3c");
 	//request.open("GET", "json/data.json");
 	

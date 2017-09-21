@@ -36,7 +36,7 @@ The database must create a json file
 		}
 }
 ```  
-Change the Sample items in the code. Month can have a year but it is not nessesary if the year is the same as the current year. Date and numDays have to be ints. numDays are how many of the data enteries you want showing.
+Change the Sample items in the code. Month can have a year but it is not nessesary if the year is the same as the current year. Date and numDays have to be ints. numDays are how many of the data enteries you want showing. Link the database created json file in `line 17` of the script.js file.
 
 ## Testing
 This layout has been tested on Chrome v60 on mobile and Desktop. To run the test click on the sample page and run it on a broswer. If everything loads it has passed. Test cases coming soon. 

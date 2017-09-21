@@ -4,7 +4,7 @@
 <img src="cardStyleCalendar/Sample%20Images/mobile.PNG" height="400px"></img>
 <img src="cardStyleCalendar/Sample%20Images/portrait.PNG" height="400px"></img>
 ## Description
-This is a card style calendar layout consisting of a month, date, and description. It uses a resposive layout. Calendars entried are dynamically added from a database. It offers smart checks incase the database was not correctly implemented. It will sort all dates by year, month and then date. The past dates will be greyed out. Years that are not current will have the year listed. 
+This is a card style calendar layout consisting of a month, date, and description. It uses a resposive layout. Calendar's entries are dynamically added from a database. It offers smart checks incase the database was not correctly implemented. It will sort all dates by year, month and then date. The past dates will be greyed out. Years that are not current will have the year listed. 
 #### For more info click one [cardStyleInfo](https://github.com/mims002/websiteLayouts/tree/master/cardStyleCalendar)
 
 ## Card Style Info [Sample Page](https://mims002.github.io/websiteLayouts/cardStyleInfo/)

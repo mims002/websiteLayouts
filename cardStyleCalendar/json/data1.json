@@ -3,9 +3,9 @@
 	
 	"daysEntry": [
 		{
-			"month":"September",
+			"month":"September 2016",
 			"day" : "Mon",
-			"date": "18",
+			"date": "19",
 			"event":"Kiosking",
 			"time": "2-4pm",
 			"location": "JC - Kiosk B",
@@ -13,9 +13,9 @@
 			
 		},
 		{	
-			"month":"September",
+			"month":"September 2016",
 			"day" : "Tue",
-			"date": "19",
+			"date": "16",
 			"event":"Kiosking",
 			"time": "3-4pm",
 			"location": "JC - Kiosk B",
@@ -23,7 +23,7 @@
 			
 		},
 		{	
-			"month":"September",
+			"month":"October 2017",
 			"day" : "Wed",
 			"date": "20",
 			"event":"Kiosking",
@@ -33,7 +33,7 @@
 			
 		},
 		{	
-			"month":"September",
+			"month":"October 2019",
 			"day" : "Thu",
 			"date": "21",
 			"event":"Kiosking",
@@ -43,7 +43,7 @@
 			
 		},
 		{	
-			"month":"September",
+			"month":"September 2017",
 			"day" : "Fri",
 			"date": "22",
 			"event":"Kiosking",
@@ -53,7 +53,7 @@
 			
 		},
 		{	
-			"month":"September",
+			"month":"November 2017",
 			"day" : "Fri",
 			"date": "22",
 			"event":"Raas Garba",
@@ -69,3 +69,8 @@
 
 
 }
+
+
+
+
+

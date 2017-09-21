@@ -4,7 +4,7 @@ Created by Mrinnmoy Mondal
 
 ## Card Style Calendar (w/auto sort & w/database support) [Sample Page](https://mims002.github.io/websiteLayouts/cardStyleCalendar/)
 <img src="Sample%20Images/mobile.PNG" height="400px"></img>
-<img src="Sample%20Images/portrait.PNG" width="500px"></img>
+<img src="Sample%20Images/portrait.PNG" height="400px"></img>
 ## Description
 This is a card style calendar layout consisting of a month, date, and description. It uses a resposive layout. Calendars entried are dynamically added from a database. It offers smart checks incase the database was not correctly implemented. It will sort all dates by year, month and then date. The past dates will be greyed out. Years that are not current will have the year listed. 
 ## How to use 

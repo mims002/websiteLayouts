@@ -14,6 +14,13 @@ This is a card style calendar layout consisting of a month, date, and descriptio
 This is a card style info layout consisting of a image, description and a external link button. It uses a resposive layout wirh CSS grid. Not all broswers may support it. The image uses the full width of the display.This can be used to show different organizations, people, events, etc.
 #### For more info click one [cardStyleInfo](https://github.com/mims002/websiteLayouts/tree/master/cardStyleInfo)
 
+## Parellex Gallery (beta) [Sample Page](https://mims002.github.io/websiteLayouts/parallexGallery/)
+<img src="Sample%20Images/p1.PNG" height="100px"></img>
+<img src="Sample%20Images/p2.PNG" height="100px"></img>
+<img src="Sample%20Images/p3.PNG" height="100px"></img>
+<img src="Sample%20Images/p4.PNG" height="100px"></img>
+## Description
+This is a simple gallery that changes pictures through a parellex effect. Current at the early stage of development. 
 ## Built With
   * HTML5
   * CSS3

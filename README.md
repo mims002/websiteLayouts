@@ -13,12 +13,6 @@ This is a card style calendar layout consisting of a month, date, and descriptio
 #### For more info click one [cardStyleInfo](https://github.com/mims002/websiteLayouts/tree/master/cardStyleInfo)
 
 ## Parellex Gallery (beta) [Sample Page](https://mims002.github.io/websiteLayouts/parallexGallery/)
-<img src="Sample%20Images/mobile.PNG" height="400px"></img>
-<img src="Sample%20Images/portrait.PNG" height="400px"></img>
-## Description
-This is a simple gallery that changes pictures through a parellex effect. Current at the early stage of development. 
-
-## Parellex Gallery (beta) [Sample Page](https://mims002.github.io/websiteLayouts/parallexGallery/)
 <img src="parallexGallery/Sample%20Images/p1.PNG" height="100px"></img>
 <img src="parallexGallery/Sample%20Images/p2.PNG" height="100px"></img>
 <img src="parallexGallery/Sample%20Images/p3.PNG" height="100px"></img>

@@ -20,7 +20,8 @@ This is a card style info layout consisting of a image, description and a extern
 <img src="parallexGallery/Sample%20Images/p3.PNG" height="100px"></img>
 <img src="parallexGallery/Sample%20Images/p4.PNG" height="100px"></img>
 ## Description
-This is a simple gallery that changes pictures through a parellex effect. Current at the early stage of development. 
+This is a simple gallery that changes pictures through a parellex effect. Current at the early stage of development.
+
 ## Built With
   * HTML5
   * CSS3

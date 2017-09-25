@@ -46,12 +46,9 @@ h1{
 	height: inherit;
 	
 	background-repeat: no-repeat; 
-	
-<<<<<<< HEAD
+
 	background-size: cover;;
-=======
-	background-size: cover;
->>>>>>> master
+
 	background-attachment: fixed;
 	
 	text-align:right;

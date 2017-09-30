@@ -6,6 +6,11 @@ var img1, img2, img3;
 var transform = ["transform", "msTransform", "webkitTransform", "mozTransform", "oTransform"];
 
 $(document).ready(function(){
+  
+  var fs = require('fs');
+var files = fs.readdirSync('/img/');
+  
+  
   img = $('#tt')[0];
   //initalizes the images 
   img1 = $(".container_slider").children().eq(0);

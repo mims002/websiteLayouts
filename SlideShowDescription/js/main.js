@@ -6,9 +6,7 @@ var img1, img2, img3;
 var transform = ["transform", "msTransform", "webkitTransform", "mozTransform", "oTransform"];
 
 $(document).ready(function(){
-  
-  var fs = require('fs');
-var files = fs.readdirSync('/img/');
+
   
   
   img = $('#tt')[0];
@@ -50,8 +48,9 @@ function changeImage(){
 	var width_parent = img1.parent().width(); 
 	img2.stop(false,true);
 	//img2.css({"top":"10px"});
-	
-	img2.css("left",width_parent).animate({"left":"0px"},3500, postChange);
+	img1.fadeOut(3500);
+	img2.fadeIn(3500,postChange);
+	//img2.css("left",width_parent).animate({"left":"0px"},3500, postChange);
 	
 
 }
@@ -79,6 +78,7 @@ function postChange(){
 	
 	
 	img1.stop(false,true);
+	changeImage();
 	
 	
 

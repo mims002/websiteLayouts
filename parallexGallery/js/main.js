@@ -3,6 +3,8 @@ var DEBUG = true;
 //holds the imgages that will be used to displayed in the gallery 
 var img1, img2, img3;
 
+var transform = ["transform", "msTransform", "webkitTransform", "mozTransform", "oTransform"];
+
 $(document).ready(function(){
   img = $('#tt')[0];
   //initalizes the images 
@@ -38,13 +40,15 @@ function swapImage(){
 }
 //changed img1 to img2 by removing active attribute
 function changeImage(){
-	
+	var transformProperty = getSupportedPropertyName(transform);
 	//img1.css("z-index","0");
 	var width_parent = img1.parent().width(); 
 	img2.stop(false,true);
 	//img2.css({"top":"10px"});
-	
-	img2.css("left",width_parent).animate({"left":"0px"},3500, postChange);
+	//img2.css("left",width_parent).animate({"left":"0px"},3500, postChange);
+	img2.css("left",width_parent).css({
+		 WebkitTransform:"translate("+1*width_parent + "px, 0px)"
+		});
 
 }
 function adjustImage($img){
@@ -76,7 +80,20 @@ function postChange(){
 
 
 
-	
+function getSupportedPropertyName(properties) {
+    for (var i = 0; i < properties.length; i++) {
+        if (typeof document.body.style[properties[i]] != "undefined") {
+            return properties[i];
+        }
+    }
+    return null;
+}
+  
+  
+
+  
+
+
 	
 
 

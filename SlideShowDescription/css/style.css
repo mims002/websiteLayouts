@@ -5,11 +5,12 @@
 .container_slider{
 	height: 100vh;
 	border: 2px solid black;
-	
+
+	background-image: url("/../img/0.jpg");
 }
 
 .container_slider>h1{
-	font-size: 5.5em;
+	font-size: 7.5em;
 	text-align: center;
 	color: white;
 	text-shadow: 0px 0px 10px black;
@@ -18,4 +19,21 @@
 .container_slider>.logo{
 	display: block;
 	margin: 0 auto;
+	width: 500px;
+}
+
+.container_slider>button{
+	margin-top: 90px;
+	width: 300px;
+	height: 100px;
+	font-size: 1.5em;
+	
+}
+.container_slider>p{
+	
+	font-size: 1.5em;
+	color: white;
+	text-shadow: 0px 0px 10px black;
+	margin-top: 50px;
+	
 }

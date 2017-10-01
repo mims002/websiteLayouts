@@ -95,14 +95,14 @@
 	z-index : -1;
 	top: 0;
 	left:0;
-	
+	overflow: hidden;
 	
 }
 .background>.img_container{
 	position: relative;
 	height: inherit;
 	width: inherit;
-	overflow: hidden;
+	
 	
 }
 .background>.img_container>img{

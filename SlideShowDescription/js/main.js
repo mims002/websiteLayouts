@@ -59,15 +59,26 @@ function adjustImage($img){
 	var superwidth = $(".background").width();
 	
 	if(DEBUG) console.log(height +"xx"+width);
-		if(DEBUG) console.log(superheight +"xx"+superwidth);
+	if(DEBUG) console.log(superheight +"xx"+superwidth);
 		
 	if(superheight > superwidth){
-		$img.css({"height":"100vh","width":"auto"});
+		$img.css({"height":superheight+"px","width":"auto"});
+		if(DEBUG) console.log("height is bigger");
 	}
 	if(superwidth > superheight){
 		$img.css({"width":"100vw","height":"auto"});
+		if(DEBUG) console.log("width is bigger");
 	}
 	
+	
+	if (window.matchMedia("(orientation: portrait)").matches) {
+	   // you're in PORTRAIT mode
+	}
+
+	if (window.matchMedia("(orientation: landscape)").matches) {
+	   $img.css({"height":superheight+"px","width":"auto", "min-height": "900px"});
+	   if(DEBUG) console.log("height is forced");
+	}
 	
 	
 }

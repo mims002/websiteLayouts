@@ -259,11 +259,8 @@
 	}
 }
 
-@media all and (orientation:landscape) {
-  .container_slider, .background{
-	
-	
-  }
+@media all and (min-height:1440px) {
+  
 
 	
 }

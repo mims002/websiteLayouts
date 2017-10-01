@@ -64,9 +64,12 @@ function adjustImage($img){
 	var height = $img.height();
 	var width = $img.width();
 	
-	
+	if($(".background").width()<$(window).width())
+		$(".background").css("width", $(window).width());
 	var superheight = $(".background").height();
 	var superwidth = $(".background").width();
+	
+	
 	
 	if(DEBUG) console.log("imgage size",height +"xx"+width);
 	if(DEBUG) console.log("image contianer size", superheight +"xx"+superwidth);

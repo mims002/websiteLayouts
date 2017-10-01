@@ -1,14 +1,14 @@
 //Logs all the action use for debugging 
 var DEBUG = true;
 //holds the imgages that will be used to displayed in the gallery 
-var img1, img2, img3, numImg=4, currentImg;
+var img1, img2, img3, numImg=5, currentImg=0;
 
 
 var transform = ["transform", "msTransform", "webkitTransform", "mozTransform", "oTransform"];
 
 $(document).ready(function(){
-	img1 = $(".background").children().eq(0);
-	img2 = $(".background").children().eq(1);
+	img1 = $(".img_container").children().eq(1);
+	img2 = $(".img_container").children().eq(0);
 	
 	img3 = new Image();
  
@@ -19,21 +19,30 @@ $(document).ready(function(){
 	fadeIn();
 	
 })
+
+
 function fadeIn(){
+	img1.attr("src", getNewImage());
+	
 	img1.removeClass("fadeOut").addClass("fadeIn");
+	
 	setTimeout(fadeOut, 2000);
 	if(DEBUG) console.log("fadedIn");
 }
 function fadeOut(){
+	img2.attr("src", getNewImage());
 	img1.removeClass("fadeIn").addClass("fadeOut");
+	
 	setTimeout(fadeIn, 2000);
 	if(DEBUG) console.log("fadedOut");
+	
 }
 //returns the next image
 function getNewImage(){
-	var img = new Image();
-	img.src = "img/i"+((currentImg+1)%numImg)+".jpg";
-	return img;
+	var imgpath = "";
+	currentImg = (currentImg+1)%numImg;
+	imgpath = "img/"+currentImg+".jpg";
+	return imgpath;
 }
 
 //aligns the image

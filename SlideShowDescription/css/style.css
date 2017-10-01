@@ -9,6 +9,7 @@
 	min-height: 900px;
 
 	margin: 0 auto;
+	background-color: rgba(0,0,0,0);
 		
 }
 
@@ -90,18 +91,26 @@
 	top: 0;
 	left:0;
 }
-.background>img{
-	
+.background>.img_container{
 	position: relative;
-	min-height: 900px;
-	height: 100vh !important;
-	margin: 0 auto;
-	right: 300px;
+	height: 100vh;
 }
+.background>.img_container>img{
+	
+	position: absolute;
+
+	height: 100% !important;
+	
+	
+	top:0;
+	
+}
+
 
 
 .fadeIn {
 	opacity: 0;
+	
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */

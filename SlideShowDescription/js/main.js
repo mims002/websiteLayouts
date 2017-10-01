@@ -16,7 +16,7 @@ $(document).ready(function(){
 	adjustImage(img3);
 	
 	//setInterval(img1.addClass("fadeOut").removeClass("fadeOut"), 5000);
-	setTimeout(fadeIn, 5000);
+	setTimeout(fadeIn, 1000);
 	
 })
 
@@ -25,12 +25,15 @@ function fadeIn(){
 	img1.attr("src", getNewImage());
 	
 	img1.removeClass("fadeOut").addClass("fadeIn");
+	img2.removeClass("fadeIn").addClass("fadeOut");
 	
 	setTimeout(fadeOut, 5000);
 	if(DEBUG) console.log("fadedIn");
 }
 function fadeOut(){
 	img2.attr("src", getNewImage());
+	
+	img2.removeClass("fadeOut").addClass("fadeIn");
 	img1.removeClass("fadeIn").addClass("fadeOut");
 	
 	setTimeout(fadeIn, 5000);

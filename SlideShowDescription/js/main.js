@@ -58,7 +58,7 @@ function adjustImage($img){
 	var superheight = $(".background").height();
 	var superwidth = $(".background").width();
 	
-	
+	$img.css({"left":"-190px"})
 	
 	if(DEBUG) console.log(height +"xx"+width);
 	if(DEBUG) console.log(superheight +"xx"+superwidth);

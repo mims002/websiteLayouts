@@ -57,7 +57,9 @@ function getNewImage(){
 //aligns the image
 function adjustImage($img){
 	containerheight =$(".container_slider").offset().top+$(".container_slider").outerHeight(true);
+	
 	if(DEBUG) console.log("container height is : ", containerheight);
+	
 	$(".background").css("height",containerheight);
 	$(".background").css("width","100vw");
 	
@@ -66,6 +68,7 @@ function adjustImage($img){
 	
 	if($(".background").width()<$(window).width())
 		$(".background").css("width", $(window).width());
+	
 	var superheight = $(".background").height();
 	var superwidth = $(".background").width();
 	
@@ -75,7 +78,7 @@ function adjustImage($img){
 	if(DEBUG) console.log("image contianer size", superheight +"xx"+superwidth);
 	
 	/*special case from 730px-1080px*/
-	if(superheight > superwidth || (superheight<1080 && superheight>730)){
+	if(superheight > superwidth || height < superheight){
 		
 		$img.css({"height":superheight+"px","width":"auto"});
 		if(DEBUG) console.log("height is bigger: ",superheight);

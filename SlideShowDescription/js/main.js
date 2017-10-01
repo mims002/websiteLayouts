@@ -58,10 +58,18 @@ function adjustImage($img){
 	var superheight = $(".background").height();
 	var superwidth = $(".background").width();
 	
-	$img.css({"left":"-190px"})
-	
 	if(DEBUG) console.log(height +"xx"+width);
-	if(DEBUG) console.log(superheight +"xx"+superwidth);
+		if(DEBUG) console.log(superheight +"xx"+superwidth);
+		
+	if(superheight > superwidth){
+		$img.css({"height":"100vh","width":"auto"});
+	}
+	if(superwidth > superheight){
+		$img.css({"width":"100vw","height":"auto"});
+	}
+	
+	
+	
 }
  /* 
   img = $('#tt')[0];

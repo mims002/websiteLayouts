@@ -7,7 +7,7 @@
 	
 	max-width: 900px;
 	min-height: 900px;
-
+	padding: 20px;
 	margin: 0 auto;
 	background-color: rgba(0,0,0,0);
 		
@@ -15,7 +15,7 @@
 
 .container_slider>h1{
 	
-	font-size: 5em;
+	font-size: 4em;
 	text-align: center;
 	margin-top: 0px;
 	padding-top: 40px;
@@ -90,20 +90,25 @@
 	height: 100vh;
 	width: 100vw;
 	min-height: 900px;
+	
 	position: absolute;
 	z-index : -1;
 	top: 0;
 	left:0;
+	
+	
 }
 .background>.img_container{
 	position: relative;
-	height: 100vh;
+	height: inherit;
+	width: inherit;
+	overflow: hidden;
+	
 }
 .background>.img_container>img{
 	
 	position: absolute;
 
-	height: 100% !important;
 	
 	
 	top:0;

@@ -13,7 +13,7 @@ $(document).ready(function(){
 	img3 = new Image();
  
 	img3.src = "img/0.jpg";
-	
+	adjustImage(img1);
 	
 	//setInterval(img1.addClass("fadeOut").removeClass("fadeOut"), 5000);
 	setTimeout(fadeIn, 1000);
@@ -24,6 +24,7 @@ $(document).ready(function(){
 function fadeIn(){
 	img1.attr("src", getNewImage());
 	adjustImage(img1);
+	adjustImage(img2);
 	
 	img1.removeClass("fadeOut").addClass("fadeIn");
 	img2.removeClass("fadeIn").addClass("fadeOut");
@@ -34,6 +35,7 @@ function fadeIn(){
 function fadeOut(){
 	img2.attr("src", getNewImage());
 	adjustImage(img2);
+	adjustImage(img1);
 	
 	img2.removeClass("fadeOut").addClass("fadeIn");
 	img1.removeClass("fadeIn").addClass("fadeOut");

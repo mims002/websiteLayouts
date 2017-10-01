@@ -10,9 +10,7 @@ $(document).ready(function(){
 	img1 = $(".background>.img_container").children().eq(1);
 	img2 = $(".background>.img_container").children().eq(0);
 	
-	img3 = new Image();
- 
-	img3.src = "img/0.jpg";
+	
 	adjustImage(img1);
 	
 	//setInterval(img1.addClass("fadeOut").removeClass("fadeOut"), 5000);
@@ -24,23 +22,24 @@ $(document).ready(function(){
 function fadeIn(){
 	img1.attr("src", getNewImage());
 	adjustImage(img1);
-	adjustImage(img2);
+	//adjustImage(img2);
 	
 	img1.removeClass("fadeOut").addClass("fadeIn");
 	img2.removeClass("fadeIn").addClass("fadeOut");
 	
-	setTimeout(fadeOut, 5000);
+	setTimeout(fadeOut, 6000);
 	if(DEBUG) console.log("fadedIn");
 }
 function fadeOut(){
 	img2.attr("src", getNewImage());
+	
 	adjustImage(img2);
-	adjustImage(img1);
+	//adjustImage(img1);
 	
 	img2.removeClass("fadeOut").addClass("fadeIn");
 	img1.removeClass("fadeIn").addClass("fadeOut");
 	
-	setTimeout(fadeIn, 5000);
+	setTimeout(fadeIn, 6000);
 	if(DEBUG) console.log("fadedOut");
 	
 }
@@ -54,121 +53,49 @@ function getNewImage(){
 
 //aligns the image
 function adjustImage($img){
+	containerheight =$(".container_slider").offset().top+$(".container_slider").outerHeight(true);
+	if(DEBUG) console.log("container height is : ", containerheight);
+	$(".background").css("height",containerheight);
+	$(".background").css("width","100vw");
+	
 	var height = $img.height();
 	var width = $img.width();
+	
 	
 	var superheight = $(".background").height();
 	var superwidth = $(".background").width();
 	
 	if(DEBUG) console.log(height +"xx"+width);
 	if(DEBUG) console.log(superheight +"xx"+superwidth);
+	
+	/*special case from 730px-1080px*/
+	if(superheight > superwidth || (superheight<1080 && superheight>730)){
 		
-	if(superheight > superwidth){
-		$img.css({"height":superheight+"px","width":"auto",  "left": "-50%"});
-		if(DEBUG) console.log("height is bigger");
+		$img.css({"height":superheight+"px","width":"auto"});
+		if(DEBUG) console.log("height is bigger: ",superheight);
 	}
-	if(superwidth > superheight){
+	else if(superwidth > superheight ){
 		$img.css({"width":superwidth+"px","height":"auto"});
-		if(DEBUG) console.log("width is bigger");
+		if(DEBUG) console.log("width is bigger", superwidth);
 	}
 	
-	
+	if(superwidth<width){
+		var px = -1*(((width-superwidth)/2)/height)*100;
+		$img.css("left",px+"%");
+		if(DEBUG) console.log("moving image by "+px+"%");
+	}else{
+		$img.css("left","0%");
+	}
 
 	
 	
 }
- /* 
-  img = $('#tt')[0];
-  //initalizes the images 
-  img1 = $(".background").children().eq(0);
-  img2 = $(".background").children().eq(1);
-  //adds the action listener to it
-  img.addEventListener("click", swapImage);
 
-  img3 = new Image();
- 
-  img3.src = "img/i2.jpg";
-  adjustImage(img3);
-  
-  
-  //starts moving the gallery form start
-  swapImage();
-  
-  
-  
+$(window).resize(function() {
+	adjustImage(img1);
+	adjustImage(img2);
+	
 });
-
-i =0;
-
-var width_parent;
-//runs on click 
-function swapImage(){
-	if(DEBUG)console.log(i++);
-	if(DEBUG)console.log(i++);
-	
-	
-	changeImage();
-	
-}
-//changed img1 to img2 by removing active attribute
-function changeImage(){
-	var transformProperty = getSupportedPropertyName(transform);
-	//img1.css("z-index","0");
-	var width_parent = img1.parent().width(); 
-	img2.stop(false,true);
-	//img2.css({"top":"10px"});
-	img1.fadeOut(3500);
-	img2.fadeIn(3500,postChange);
-	//img2.css("left",width_parent).animate({"left":"0px"},3500, postChange);
-	
-
-}
-function adjustImage($img){
-	var height = $img.height;
-	var width = $img.width;
-	
-	if(DEBUG) console.log(height +"xx"+width);
-}
-//moves the background image after animating it 
-function postChange(){
-	
-	console.log("ran~!");
-	img1.html("");
-	img1.css("left",width_parent);
-	img1.css("z-index","1");
-	img2.css("z-index","-1");
-	
-	
-	var imgT = img1;
-	img1 = img2;
-	img2 = imgT;
-	
-	
-	
-	
-	img1.stop(false,true);
-	changeImage();
-	
-	
-
-}
-
-
-
-function getSupportedPropertyName(properties) {
-    for (var i = 0; i < properties.length; i++) {
-        if (typeof document.body.style[properties[i]] != "undefined") {
-            return properties[i];
-        }
-    }
-    return null;
-}
-  
-  
-
-  
-
-
 	
 
 
@@ -181,9 +108,6 @@ function getSupportedPropertyName(properties) {
 
 
 
-
-
-*/
 
 
 

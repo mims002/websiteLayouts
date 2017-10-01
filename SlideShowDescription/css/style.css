@@ -1,101 +1,13 @@
 .super{
 	font-family: arial;
-	min-width: 300px;
 }
 
-.container_slider>.foreground{
-	position: relative;
-	max-width: 900px;
-	min-width:300px;
-	margin : 0 auto;
-	z-index: 3;
-}
-
-.container_slider>.foreground > h1{
-	text-align: center;
-	font-size: 4em;
-	
-	
-
-	color: white;
-	
-	
-	top: 20px;
-	
-	
-	
-}
-
-.container_slider>.foreground>.logo{
-	display: block;
-    margin: 0 auto;
-	
-}
-.container_slider>.foreground>button{
-	display : block;
-	width: 200px;
-	height: 50px;
-	font-size: 1em;
-	background-color: white;
-	margin-top:20%;
-	
-}
-.container_slider>.foreground> button:hover{
-
-	background-color: black;
-}
 .container_slider{
-	position:relative;
-	
-	width: 100%;
-	height: 98vh;
-
-	
-	
-	margin: 0 auto;
-	z-index:-2;
-	
-	background-color:white ;
-	
-	overflow:hidden;
-	
-	
-	border:#666 solid 1px;
+	height: 100vh;
+	border: 2px solid black;
+	width: 100vw;
 }
 
-
-.image_display{
-	position: absolute;
-
-
-	width:100%;
-	height: 100%;
-	
-	background-repeat: no-repeat; 
-
-	-webkit-transform: translate3d(10, 0px, 0px);
-	
-	background-attachment: fixed;
-	background-size: cover;
-
-	
-	text-align:right;
-	font-size: 20px;
-	
-	text-shadow: 1px 3px 5px #000;
-	
+.container_slider>h1{
+	font-size: 1.5em;
 }
-
-/*Responsive Styles small screen*/
-@media screen and (max-width : 768px) and (min-width: 412px){
-	
-}
-
-
-/*Responsive Styles phones*/
-@media screen and (max-width : 412px) {
-		
-	
-
-}
-

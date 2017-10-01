@@ -1,18 +1,53 @@
 //Logs all the action use for debugging 
 var DEBUG = true;
 //holds the imgages that will be used to displayed in the gallery 
-var img1, img2, img3;
+var img1, img2, img3, numImg=4, currentImg;
+
 
 var transform = ["transform", "msTransform", "webkitTransform", "mozTransform", "oTransform"];
 
 $(document).ready(function(){
+	img1 = $(".background").children().eq(0);
+	img2 = $(".background").children().eq(1);
+	
+	img3 = new Image();
+ 
+	img3.src = "img/0.jpg";
+	adjustImage(img3);
+	
+	//setInterval(img1.addClass("fadeOut").removeClass("fadeOut"), 5000);
+	fadeIn();
+	
+})
+function fadeIn(){
+	img1.removeClass("fadeOut").addClass("fadeIn");
+	setTimeout(fadeOut, 2000);
+	if(DEBUG) console.log("fadedIn");
+}
+function fadeOut(){
+	img1.removeClass("fadeIn").addClass("fadeOut");
+	setTimeout(fadeIn, 2000);
+	if(DEBUG) console.log("fadedOut");
+}
+//returns the next image
+function getNewImage(){
+	var img = new Image();
+	img.src = "img/i"+((currentImg+1)%numImg)+".jpg";
+	return img;
+}
 
-  
-  
+//aligns the image
+function adjustImage($img){
+	var height = $img.height;
+	var width = $img.width;
+	
+	if(DEBUG) console.log(height +"xx"+width);
+}
+ /* 
   img = $('#tt')[0];
   //initalizes the images 
-  img1 = $(".container_slider").children().eq(0);
-  img2 = $(".container_slider").children().eq(1);
+  img1 = $(".background").children().eq(0);
+  img2 = $(".background").children().eq(1);
   //adds the action listener to it
   img.addEventListener("click", swapImage);
 
@@ -114,7 +149,7 @@ function getSupportedPropertyName(properties) {
 
 
 
-
+*/
 
 
 

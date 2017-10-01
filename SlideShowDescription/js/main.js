@@ -1,7 +1,7 @@
 //Logs all the action use for debugging 
 var DEBUG = true;
 //holds the imgages that will be used to displayed in the gallery 
-var img1, img2, img3, numImg=5, currentImg=0;
+var img1, img2, img3, numImg=7, currentImg=0;
 
 
 var transform = ["transform", "msTransform", "webkitTransform", "mozTransform", "oTransform"];

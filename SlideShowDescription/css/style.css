@@ -43,6 +43,8 @@
 	margin: 0 auto;
 	overflow: auto;
 	
+	
+	
 }
 
 
@@ -227,10 +229,15 @@
 	.container_slider>.logo{
 		width: 250px;
 	}
-	
+	.container_slider>.menu_containter{
+		text-align: center;
+		display: flex;
+		justify-content: center;
+	}
 	.container_slider>.menu_containter li{
-		margin-top: 10px;
-		display: incline-block;
+		margin-top: 20px;
+		display: list-item;
+		overflow: hidden;
 		float: left;
 	}
 	.container_slider>button{

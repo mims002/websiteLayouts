@@ -213,7 +213,7 @@
 	}
 
 	.container_slider, .background{
-		height: 100vh;
+		
 		min-height: 0;
 		
 	}
@@ -229,7 +229,7 @@
 	}
 	
 	.container_slider>.menu_containter li{
-		margin-top: 0px;
+		margin-top: 10px;
 		display: incline-block;
 		float: left;
 	}

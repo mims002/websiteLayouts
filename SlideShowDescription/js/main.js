@@ -11,7 +11,10 @@ $(document).ready(function(){
 	img2 = $(".background>.img_container").children().eq(0);
 	
 	
+	
 	adjustImage(img1);
+	adjustImage(img2);
+	
 	
 	//setInterval(img1.addClass("fadeOut").removeClass("fadeOut"), 5000);
 	fadeIn();
@@ -22,7 +25,7 @@ $(document).ready(function(){
 function fadeIn(){
 	img1.attr("src", getNewImage());
 	adjustImage(img1);
-	//adjustImage(img2);
+	adjustImage(img2);
 	
 	img1.removeClass("fadeOut").addClass("fadeIn");
 	img2.removeClass("fadeIn").addClass("fadeOut");
@@ -34,7 +37,7 @@ function fadeOut(){
 	img2.attr("src", getNewImage());
 	
 	adjustImage(img2);
-	//adjustImage(img1);
+	adjustImage(img1);
 	
 	img2.removeClass("fadeOut").addClass("fadeIn");
 	img1.removeClass("fadeIn").addClass("fadeOut");
@@ -65,8 +68,8 @@ function adjustImage($img){
 	var superheight = $(".background").height();
 	var superwidth = $(".background").width();
 	
-	if(DEBUG) console.log(height +"xx"+width);
-	if(DEBUG) console.log(superheight +"xx"+superwidth);
+	if(DEBUG) console.log("imgage size",height +"xx"+width);
+	if(DEBUG) console.log("image contianer size", superheight +"xx"+superwidth);
 	
 	/*special case from 730px-1080px*/
 	if(superheight > superwidth || (superheight<1080 && superheight>730)){
@@ -77,21 +80,35 @@ function adjustImage($img){
 	else if(superwidth > superheight ){
 		$img.css({"width":superwidth+"px","height":"auto"});
 		if(DEBUG) console.log("width is bigger", superwidth);
-		
-		if(superwidth<width){
-			var px = -1*(((width-superwidth)/2)/height)*100;
-			$img.css("left",px+"%");
-			if(DEBUG) console.log("moving image by "+px+"%");
-		}else{
-			$img.css("left","0%");
-		}
-	
 	}
 	
-	
+	if(superwidth<width){
+		var px = -1*(((width-superwidth)/2)/height)*100;
+		$img.css("left",px+"%");
+		if(DEBUG) console.log("moving image by "+px+"%");
+	}else{
+		$img.css("left","0%");
+	}
 
 	
 	
+}
+
+function initsize(){
+	containerheight =$(".container_slider").offset().top+$(".container_slider").outerHeight(true);
+	if(DEBUG) console.log("container height is : ", containerheight);
+	$(".background").css("height",containerheight);
+	$(".background").css("width","100vw");
+	
+	var height = $img.height();
+	var width = $img.width();
+	
+	
+	var superheight = $(".background").height();
+	var superwidth = $(".background").width();
+	
+	if(DEBUG) console.log("imgage size",height +"xx"+width);
+	if(DEBUG) console.log("image contianer size", superheight +"xx"+superwidth);
 }
 
 $(window).resize(function() {

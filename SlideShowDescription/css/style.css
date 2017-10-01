@@ -1,12 +1,15 @@
-.testingng{
+.super{
 	font-family: arial;
 }
 
 .container_slider{
 	height: 100vh;
-	border: 2px solid black;
+	
 
-	background-image: url("/../img/0.jpg");
+	background-image: url(../img/0.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;	
 }
 
 .container_slider>h1{
@@ -19,15 +22,48 @@
 .container_slider>.logo{
 	display: block;
 	margin: 0 auto;
-	width: 500px;
+	padding:0px;
+	
 }
 
+
+.container_slider>.menu_containter{
+	list-style-type:none;
+    padding:0px;
+	display: table;    
+	margin: 0 auto;
+	overflow: auto;
+	
+}
+
+
+/*Create a horizontal list with spacing*/
+.container_slider>.menu_containter li{
+	margin-top: 60px;
+	display: incline-block;
+	float: left;
+}
+/*Create a horizontal list with spacing*/
+.container_slider>.menu_containter li a{
+	padding-right:20px;
+	padding-left:20px;
+	color: white;
+	text-shadow: 0px 0px 10px black;
+	text-decoration:none;
+}
+.container_slider>.menu_containter li a:hover{
+	color: black;
+}
+
+
+
 .container_slider>button{
-	margin-top: 90px;
+	margin-top: 30px;
 	width: 300px;
 	height: 100px;
 	font-size: 1.5em;
 	background-color: white;
+	border-radius: 6px;
 	
 }
 .container_slider>button:hover{
@@ -40,7 +76,7 @@
 	font-size: 1.5em;
 	color: white;
 	text-shadow: 0px 0px 10px black;
-	margin-top: 50px;
+
 	
 }
 
@@ -51,6 +87,7 @@
 @media screen and (max-width : 412px){
 	.super{
 		font-family: arial;
+		margin-top: -30px;
 	}
 
 	.container_slider{
@@ -64,11 +101,16 @@
 	}
 
 	.container_slider>.logo{
-		width: 300px;
+		width: 250px;
 	}
-
+	
+	.container_slider>.menu_containter li{
+		margin-top: 0px;
+		display: incline-block;
+		float: left;
+	}
 	.container_slider>button{
-		margin-top: 90px;
+		
 		width: 120px;
 		height: 50px;
 		font-size: .8em;
@@ -79,8 +121,9 @@
 		font-size: .7em;
 		color: white;
 		text-shadow: 0px 0px 10px black;
-		margin-top: 50px;
+
 		text-align: center;
+		margin-top:0px;
 		
 	}
 }

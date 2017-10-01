@@ -75,7 +75,7 @@ function adjustImage($img){
 	if(DEBUG) console.log("imgage size",height +"xx"+width);
 	if(DEBUG) console.log("image contianer size", superheight +"xx"+superwidth);
 	
-	/*special case from 730px-1080px*/
+	
 	if(width>superwidth && (superheight > superwidth || height < superwidth) ){
 		
 		$img.css({"height":superheight+"px","width":"auto"});

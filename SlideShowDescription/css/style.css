@@ -86,6 +86,9 @@
 }
 
 .background{
+	
+
+	
 	position: absolute;
 	z-index : -1;
 	top: 0;
@@ -111,11 +114,11 @@
 .fadeIn {
 	opacity: 0;
 	
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 3s; /* Firefox < 16 */
+        -ms-animation: fadein 3s; /* Internet Explorer */
+         -o-animation: fadein 3s; /* Opera < 12.1 */
+            animation: fadein 3s;
 	
 	opacity: 1;
 }
@@ -146,11 +149,11 @@
 .fadeOut {
 	opacity: 1;
 	
-    -webkit-animation: fadeout 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadeout 2s; /* Firefox < 16 */
-        -ms-animation: fadeout 2s; /* Internet Explorer */
-         -o-animation: fadeout 2s; /* Opera < 12.1 */
-            animation: fadeout 2s;
+    -webkit-animation: fadeout 3s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 3s; /* Firefox < 16 */
+        -ms-animation: fadeout 3s; /* Internet Explorer */
+         -o-animation: fadeout 3s; /* Opera < 12.1 */
+            animation: fadeout 3s;
 			
 	opacity: 0;
 }
@@ -192,7 +195,7 @@
 		
 	}
 
-	.container_slider{
+	.container_slider, .background{
 		height: 100vh;
 		min-height: 0;
 		
@@ -233,8 +236,9 @@
 }
 
 @media all and (orientation:landscape) {
-  .container_slider{
+  .container_slider, .background{
 	min-height: 900px;
+  }
 
 	
 }

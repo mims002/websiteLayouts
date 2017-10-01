@@ -7,13 +7,13 @@ var img1, img2, img3, numImg=5, currentImg=0;
 var transform = ["transform", "msTransform", "webkitTransform", "mozTransform", "oTransform"];
 
 $(document).ready(function(){
-	img1 = $(".img_container").children().eq(1);
-	img2 = $(".img_container").children().eq(0);
+	img1 = $(".background>.img_container").children().eq(1);
+	img2 = $(".background>.img_container").children().eq(0);
 	
 	img3 = new Image();
  
 	img3.src = "img/0.jpg";
-	adjustImage(img3);
+	
 	
 	//setInterval(img1.addClass("fadeOut").removeClass("fadeOut"), 5000);
 	setTimeout(fadeIn, 1000);
@@ -23,6 +23,7 @@ $(document).ready(function(){
 
 function fadeIn(){
 	img1.attr("src", getNewImage());
+	adjustImage(img1);
 	
 	img1.removeClass("fadeOut").addClass("fadeIn");
 	img2.removeClass("fadeIn").addClass("fadeOut");
@@ -32,6 +33,7 @@ function fadeIn(){
 }
 function fadeOut(){
 	img2.attr("src", getNewImage());
+	adjustImage(img2);
 	
 	img2.removeClass("fadeOut").addClass("fadeIn");
 	img1.removeClass("fadeIn").addClass("fadeOut");
@@ -50,10 +52,16 @@ function getNewImage(){
 
 //aligns the image
 function adjustImage($img){
-	var height = $img.height;
-	var width = $img.width;
+	var height = $img.height();
+	var width = $img.width();
+	
+	var superheight = $(".background").height();
+	var superwidth = $(".background").width();
+	
+	
 	
 	if(DEBUG) console.log(height +"xx"+width);
+	if(DEBUG) console.log(superheight +"xx"+superwidth);
 }
  /* 
   img = $('#tt')[0];

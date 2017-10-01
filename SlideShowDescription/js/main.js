@@ -77,15 +77,18 @@ function adjustImage($img){
 	else if(superwidth > superheight ){
 		$img.css({"width":superwidth+"px","height":"auto"});
 		if(DEBUG) console.log("width is bigger", superwidth);
+		
+		if(superwidth<width){
+			var px = -1*(((width-superwidth)/2)/height)*100;
+			$img.css("left",px+"%");
+			if(DEBUG) console.log("moving image by "+px+"%");
+		}else{
+			$img.css("left","0%");
+		}
+	
 	}
 	
-	if(superwidth<width){
-		var px = -1*(((width-superwidth)/2)/height)*100;
-		$img.css("left",px+"%");
-		if(DEBUG) console.log("moving image by "+px+"%");
-	}else{
-		$img.css("left","0%");
-	}
+	
 
 	
 	

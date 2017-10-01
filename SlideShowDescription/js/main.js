@@ -25,7 +25,7 @@ $(document).ready(function(){
 function fadeIn(){
 	img1.attr("src", getNewImage());
 	adjustImage(img1);
-	adjustImage(img2);
+	//adjustImage(img2);
 	
 	img1.removeClass("fadeOut").addClass("fadeIn");
 	img2.removeClass("fadeIn").addClass("fadeOut");
@@ -37,7 +37,7 @@ function fadeOut(){
 	img2.attr("src", getNewImage());
 	
 	adjustImage(img2);
-	adjustImage(img1);
+	//adjustImage(img1);
 	
 	img2.removeClass("fadeOut").addClass("fadeIn");
 	img1.removeClass("fadeIn").addClass("fadeOut");

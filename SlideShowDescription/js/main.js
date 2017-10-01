@@ -14,7 +14,7 @@ $(document).ready(function(){
 	adjustImage(img1);
 	
 	//setInterval(img1.addClass("fadeOut").removeClass("fadeOut"), 5000);
-	setTimeout(fadeIn, 1000);
+	fadeIn();
 	
 })
 

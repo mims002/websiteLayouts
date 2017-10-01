@@ -66,8 +66,6 @@ function adjustImage($img){
 	var height = $img.height();
 	var width = $img.width();
 	
-	if($(".background").width()<$(window).width())
-		$(".background").css("width", $(window).width());
 	
 	var superheight = $(".background").height();
 	var superwidth = $(".background").width();
@@ -78,12 +76,12 @@ function adjustImage($img){
 	if(DEBUG) console.log("image contianer size", superheight +"xx"+superwidth);
 	
 	/*special case from 730px-1080px*/
-	if(superheight > superwidth || height < superheight){
+	if(width>superwidth && (superheight > superwidth || height < superwidth) ){
 		
 		$img.css({"height":superheight+"px","width":"auto"});
 		if(DEBUG) console.log("height is bigger: ",superheight);
 	}
-	else if(superwidth > superheight ){
+	else {
 		$img.css({"width":superwidth+"px","height":"auto"});
 		if(DEBUG) console.log("width is bigger", superwidth);
 	}

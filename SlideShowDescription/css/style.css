@@ -1,4 +1,4 @@
-.super{
+.testingng{
 	font-family: arial;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .container_slider>h1{
-	font-size: 7.5em;
+	font-size: 4em;
 	text-align: center;
 	color: white;
 	text-shadow: 0px 0px 10px black;
@@ -27,6 +27,12 @@
 	width: 300px;
 	height: 100px;
 	font-size: 1.5em;
+	background-color: white;
+	
+}
+.container_slider>button:hover{
+	color: white;
+	background-color: rgba(0,0,0,0);
 	
 }
 .container_slider>p{
@@ -36,4 +42,45 @@
 	text-shadow: 0px 0px 10px black;
 	margin-top: 50px;
 	
+}
+
+@media screen and (max-width : 768px) and (min-width: 412px){
+	
+}
+
+@media screen and (max-width : 412px){
+	.super{
+		font-family: arial;
+	}
+
+	.container_slider{
+		height: 100vh;
+		
+	}
+
+	.container_slider>h1{
+		font-size: 3.2em;
+		
+	}
+
+	.container_slider>.logo{
+		width: 300px;
+	}
+
+	.container_slider>button{
+		margin-top: 90px;
+		width: 120px;
+		height: 50px;
+		font-size: .8em;
+		
+	}
+	.container_slider>p{
+		
+		font-size: .7em;
+		color: white;
+		text-shadow: 0px 0px 10px black;
+		margin-top: 50px;
+		text-align: center;
+		
+	}
 }

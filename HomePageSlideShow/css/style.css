@@ -1,7 +1,9 @@
 .super{
 	font-family: arial;
 }
-
+.font_tiny{
+		font-size: .7em;
+	}
 .container_slider{
 	
 	width: auto;
@@ -41,7 +43,7 @@
     padding:0px;
 	display: table;    
 	margin: 0 auto;
-	overflow: auto;
+	
 	
 	
 	
@@ -52,20 +54,24 @@
 .container_slider>.menu_containter li{
 	margin-top: 60px;
 	display: incline-block;
+	
 	float: left;
 }
 /*Create a horizontal list with spacing*/
 .container_slider>.menu_containter li a{
-	padding-right:20px;
-	padding-left:20px;
+	padding-right:10px;
+	padding-left:10px;
 	color: white;
 	text-shadow: 0px 0px 10px black;
 	text-decoration:none;
+	text-align: center;
+	font-size: 2em;
+		
 }
+
 .container_slider>.menu_containter li a:hover{
 	color: black;
 }
-
 
 
 .container_slider>button{
@@ -205,14 +211,21 @@
 	.super{
 		font-size: 89%;
 	}
+	.font_tiny{
+		font-size: .5em;
+	}
 	
 
 }
+
 
 @media screen and (max-width : 430px){
 	.super{
 		font-family: arial;
 		
+	}
+	.font_tiny{
+		font-size: .7em;
 	}
 
 	.container_slider, .background{
@@ -240,6 +253,12 @@
 		display: list-item;
 		overflow: hidden;
 		float: left;
+		
+		
+	}
+	.container_slider>.menu_containter li a{
+		font-size: 1.5em;
+		padding:5px;
 	}
 	.container_slider>button{
 		
@@ -259,7 +278,11 @@
 		
 	}
 }
-
+@media screen and (max-width : 350px){
+	.font_tiny{
+		font-size: .5em;
+	}
+}
 @media all and (min-width:1440px) {
   
 	.super{

@@ -76,13 +76,17 @@ function adjustImage($img){
 	if(DEBUG) console.log("image contianer size", superheight +"xx"+superwidth);
 	
 	
-	if(width>superwidth && (superheight > superwidth || height < superwidth) ){
+	if(height != superheight ){
 		
 		$img.css({"height":superheight+"px","width":"auto"});
 		if(DEBUG) console.log("height is bigger: ",superheight);
+	
+		width = $img.width();
 	}
-	else {
+	
+	if(width<superwidth) {
 		$img.css({"width":superwidth+"px","height":"auto"});
+		//alert("ran");
 		if(DEBUG) console.log("width is bigger", superwidth);
 	}
 	
@@ -121,15 +125,6 @@ $(window).resize(function() {
 	
 });
 	
-
-
-
-
-
-
-
-
-
 
 
 

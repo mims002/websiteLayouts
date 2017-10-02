@@ -1,5 +1,5 @@
 //Logs all the action use for debugging 
-var DEBUG = true;
+var DEBUG = false;
 //holds the imgages that will be used to displayed in the gallery 
 var img1, img2, img3, numImg=7, currentImg=0;
 

@@ -2,8 +2,9 @@
 	font-family: arial;
 }
 .font_tiny{
-		font-size: .7em;
-	}
+	font-size: .7em;
+	font-family: arial;
+}
 .container_slider{
 	
 	width: auto;

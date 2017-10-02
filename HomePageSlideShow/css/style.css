@@ -12,6 +12,7 @@
 	max-width: 1000px;
 	
 	
+	
 	padding: 10px;
 	padding-bottom: 40px;
 	margin: 0 auto;
@@ -287,14 +288,14 @@
 @media all and (min-width:1440px) {
   
 	.super{
-		font-size:130%;
+		font-size:110%;
 	}
 	
 }
 @media all and (min-width:2200px) {
   
 	.super{
-		font-size:150%;
+		font-size:120%;
 	}
 	.container_slider>button{
 		

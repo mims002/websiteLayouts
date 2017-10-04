@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="http://www.gmuisa.org/files/theme/CSS/home.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		
+   <script>
+	   //Logs all the action use for debugging 
+		var DEBUG = true;
+		//holds the imgages that will be used to displayed in the gallery 
+		var img1, img2, img3, numImg=7, currentImg=0;
+
+
+		var transform = ["transform", "msTransform", "webkitTransform", "mozTransform", "oTransform"];
+
+		$(document).ready(function(){
+			img1 = $(".background>.img_container").children().eq(1);
+			img2 = $(".background>.img_container").children().eq(0);
+			
+			
+			
+			adjustImage(img1);
+			adjustImage(img2);
+			
+			
+			//setInterval(img1.addClass("fadeOut").removeClass("fadeOut"), 5000);
+			fadeIn();
+			
+		})
+
+		//fades in the image 
+		function fadeIn(){
+			img1.one("load",function(){
+				adjustImage(img1);
+				
+				
+				img1.removeClass("fadeOut").addClass("fadeIn");
+				img2.removeClass("fadeIn").addClass("fadeOut");
+				
+				setTimeout(fadeOut, 3000);
+				if(DEBUG) console.log("fadedIn");	
+				
+			}).attr("src", getNewImage());
+			
+			
+			
+		}
+
+		//fades out the image
+		function fadeOut(){
+			img2.one("load",function(){
+				
+				adjustImage(img2);
+				
+				
+				img2.removeClass("fadeOut").addClass("fadeIn");
+				img1.removeClass("fadeIn").addClass("fadeOut");
+				
+				setTimeout(fadeIn, 3000);
+				if(DEBUG) console.log("fadedOut");
+					
+			}).attr("src", getNewImage());
+			
+			
+			
+		}
+		//returns the next image
+		function getNewImage(){
+			var imgpath = "";
+			currentImg = (currentImg+1)%numImg;
+			imgpath = "http://www.gmuisa.org/files/theme/home/"+currentImg+".jpg";
+			return imgpath;
+		}
+
+		//aligns the image
+		function adjustImage($img){
+			containerheight =$(".container_slider").offset().top+$(".container_slider").outerHeight(true);
+			
+			if(DEBUG) console.log("container height is : ", containerheight);
+			
+			$(".background").css("height",containerheight);
+			$(".background").css("width","100vw");
+			
+			//resets the image position
+			$img.css({"left":"0","top":"0","height":"auto","width":"auto"});
+			
+			
+			var height = $img.height();
+			var width = $img.width();
+			
+			
+			var superheight = $(".background").height();
+			var superwidth = $(".background").width();
+			
+			
+			
+			if(DEBUG) console.log("imgage size",height +"xx"+width);
+			if(DEBUG) console.log("image contianer size", superheight +"xx"+superwidth);
+			
+			//adjusts the height first 
+			if( height != superheight ){
+				
+				$img.css({"height":superheight+"px","width":"auto"});
+				if(DEBUG) console.log("height is bigger: ",superheight);
+			
+				width = $img.width();
+				
+				
+				if(superwidth<width){
+					var px = -1.0*((width-superwidth)/2.0);
+					$img.css("left",px+"px");
+					if(DEBUG) console.log("moving image by "+px+"px");
+				}
+			}
+			//adjust the width if nessasary 
+			if(width<superwidth) {
+				$img.css({"width":superwidth+"px","height":"auto"});
+				//alert("ran");
+				if(DEBUG) console.log("width is bigger", superwidth);
+			}
+			
+			
+
+			
+			
+		}
+
+
+		$(window).resize(function() {
+			adjustImage(img1);
+			adjustImage(img2);
+			
+		});
+			
+   </script>
+	
+  </head>
+  
+  
+	<body class="super">
+		
+		<div class="container_slider">
+			
+			<h1>GMU<br>Indian Student Association</h1>
+			<div id="logo_fix"><img class="logo" src="http://www.gmuisa.org/files/theme/home/isa.png"></div>
+			<p>The best way to find yourself is to lose yourself in the service of others -Mahatma Gandhi</p>
+			
+			<ul class="menu_containter">
+				<li><a href="http://www.gmuisa.org/events.html" class="fa fa-calendar fa-2x"><br><span class="font_tiny">Events</span></a></li>
+				<li><a href="http://www.gmuisa.org/media.html" class="fa fa-camera fa-2x"><br><span class="font_tiny">Media</a></span></li>
+				<li><a href="http://www.gmuisa.org/officers.html" class="fa fa-users fa-2x"><br><span class="font_tiny">Board</a></span></li>
+				<li><a href="http://www.gmuisa.org/archive.html" class="fa  fa-database fa-2x"><br><span class="font_tiny">Archive</span></a></li>
+				<li><a href="http://www.gmuisa.org/membership.html" class="fa  fa-user-plus fa-2x"><br><span class="font_tiny">Membership</span></a></li>
+				<li><a href="http://www.gmuisa.org/partner-organizations.html" class="fa  fa-link fa-2x"><br><span class="font_tiny">Orgs</span></a></li>
+				
+			</ul>
+			
+			<ul class="menu_containter">
+				<li><a href="https://www.facebook.com/gmuisa/" class="fa fa-facebook fa-2x"></a></li>
+				<li><a href="https://www.instagram.com/gmu_isa/" class="fa fa fa-instagram fa-2x"></a></li>
+				<li><a href="https://twitter.com/gmu_isa" class="fa fa-twitter fa-2x"></a></li>
+				<li><a href="mailto:gmu.isa.1@gmail.com" class="fa  fa-envelope-o fa-2x"></a></li>
+				
+			</ul>
+			
+			
+			
+			<button onclick="window.location='https://docs.google.com/forms/d/e/1FAIpQLSd4lUojbNNYNQLO6NSmzEqPDt4HNt6a_jxFwzKTiuDoIVKqmw/viewform'" style="float:left">LEAVE FEEDBACK </button>
+			<button onclick="window.location='https://getconnected.gmu.edu/organization/gmuisa'" style="float:right">GET CONNECTED PAGE</button>
+			
+			
+			
+		</div>
+		<div class="background">
+			
+			<div class="img_container">
+				
+				<img   style="opacity=0.65" src="http://www.gmuisa.org/files/theme/home/0.jpg"></img>
+				<img   style="opacity=0.65" src="http://www.gmuisa.org/files/theme/home/0.jpg"></img>
+	
+			</div>
+		</div>
+				<!-- Bottom content with logo and description of the site-->
+		<div class="bottom font_Ubuntu">
+			
+			<img class="nLogo" src="http://www.gmuisa.org/files/theme/home/symbols111.png"></img>
+			<div class="right"></div>
+				<h3>NAMASTE</h3>
+				<p>Welcome to George Mason University’s Indian Student Association, the premier organization dedicated to promoting Indian culture and traditions. 
+														<br><br>Our mission is to spread Indian culture across the campus. We invite and encourage all people, regardless of background, to come out, enjoy our events, and check out what we have to offer! We look forward to meeting you soon!
+														</p>			
+		</div>
+		
+		
+		<footer>
+			<h5>© 2017-18 Indian Student Association at the George Mason University</h5>
+		</footer>
+		
+		<div class="space"></div>
+		<div class="space"></div>
+		<div class="space"></div>
+
+</body>
+	
+<div style='display:none'>{title}</div>
+<div style='display:none'>{menu}</div>
+<div style='display:none, overflow:hidden, width:0, height:0'>{content}</div>
+<div style='padding: 0px; width:100%; text-align:center;'>{footer}</div>
+
+</html>

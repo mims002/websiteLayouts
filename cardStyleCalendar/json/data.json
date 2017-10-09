@@ -1,5 +1,5 @@
 {
-	"numDays" : 1,
+	"numDays" : 7,
 	
 	"daysEntry": [
 		{
@@ -13,13 +13,43 @@
 			
 		},
 		{	
-			"month":"September",
+			"month":"October",
+			"day" : "Mon",
+			"date": 16,
+			"event":"Henna Fundraiser",
+			"time": "12-2pm",
+			"location": "JC - Meeting Room D",
+			"details" :"ISA will be holding a henna fundraiser. Come and get your henna done. Members: $4, Non-Members: $6." 
+			
+		},
+		{	
+			"month":"October",
 			"day" : "Tue",
+			"date": 17,
+			"event":"Henna Fundraiser",
+			"time": "1-3pm",
+			"location": "JC - Meeting Room E",
+			"details" :"ISA will be holding a henna fundraiser. Come and get your henna done. Members: $4, Non-Members: $6." 
+			
+		},
+		{	
+			"month":"October",
+			"day" : "Wed",
+			"date": 18,
+			"event":"Henna Fundraiser",
+			"time": "2-3pm",
+			"location": "JC - Meeting Room C",
+			"details" :"ISA will be holding a henna fundraiser. Come and get your henna done. Members: $4, Non-Members: $6." 
+			
+		},
+		{	
+			"month":"October",
+			"day" : "Thu",
 			"date": 19,
-			"event":"Kiosking",
-			"time": "3-4pm",
-			"location": "JC - Kiosk B",
-			"details" :"Learn more about ISA, become a member and buy ticket to Garba" 
+			"event":"Henna Fundraiser",
+			"time": "1-3pm",
+			"location": "JC - Meeting Room C",
+			"details" :"ISA will be holding a henna fundraiser. Come and get your henna done. Members: $4, Non-Members: $6." 
 			
 		},
 		{	

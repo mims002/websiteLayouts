@@ -118,7 +118,7 @@ function createDaysEntry(day,date,month,year, description){
 		(year == currentYear && monthOrder(month.split(" ")[0]) < currentMonth)  || 
 		(year == currentYear && monthOrder(month.split(" ")[0]) == currentMonth && date < currentDay) ){
 			
-			$divContainer.css("color","grey");
+			$divContainer.css("color","rgba(0,0,0,0.50)");
 		}
 		
 	

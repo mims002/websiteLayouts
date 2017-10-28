@@ -1,35 +1,26 @@
 {
-	"numDays" : 1,
+	"numDays" : 2,
 	
 	"daysEntry": [
-		{
-			"month":"October",
-			"day" : "Thu",
-			"date": 12,
-			"event":"General Body Meeting",
-			"time": "1-3pm",
-			"location": "JC Meeting Room C",
-			"details" :"Come to our first general body meeting. Find out more about our upcoming events and how to get involved with games, food, and prizes!" 
-			
-		},
+
 		{	
-			"month":"September",
-			"day" : "Tue",
-			"date": 19,
-			"event":"Kiosking",
-			"time": "3-4pm",
-			"location": "JC - Kiosk B",
-			"details" :"Learn more about ISA, become a member and buy ticket to Garba" 
-			
-		},
-		{	
-			"month":"September",
+			"month":"November",
 			"day" : "Wed",
+			"date": 1,
+			"event":"Movie Night",
+			"time": "6:30 - 9:30 pm",
+			"location": "JC - Bistro",
+			"details" :"Come join ISA for Bollywood Horror Movie Night. We will be showing Bhool Bhulaiyaa." 
+			
+		},
+		{	
+			"month":"October",
+			"day" : "Fri",
 			"date": 20,
-			"event":"Kiosking",
-			"time": "2-4pm",
-			"location": "JC - Kiosk E",
-			"details" :"Learn more about ISA, become a member and buy ticket to Garba" 
+			"event":"Diwali Night",
+			"time": "6-8pm",
+			"location": "Hub Corner Pocket",
+			"details" :"Come celebtrate diwali with games, food, and fun!" 
 			
 		},
 		{	

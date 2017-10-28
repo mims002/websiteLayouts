@@ -13,15 +13,44 @@ var DEBUG = true;
 var request;
 
 $(function(){
-	request = new XMLHttpRequest();
-	request.open("GET", "https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data1.json");
+	//request = new XMLHttpRequest();
+	//request.open("GET", "https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data1.json");
 	//request.open("GET", "https://googledrive.com/host/0B-u62Mq0rwlkSjZNWFV2UVZUQ3c");
 	//request.open("GET", "json/data.json");
 	
-	request.onload = xmlRequestData;
+	//request.onload = xmlRequestData;
 	
-	request.send();
+	//request.send();
+	var JSONURL= 'https://spreadsheets.google.com/feeds/list/1vHC9mKler--bunAvBmumJqQ7-e_mb6K3P4fC1-njFVQ/1/public/basic?alt=json';
+	 $.ajax({
+        url: JSONURL,
+        success: function(data){
+            console.log(data);
 	
+			var calendarEntry = [];
+
+			var cells = data.feed.entry;
+			
+			for (var i = 0; i < cells.length; i++){
+				var dayEntry = new Object();
+				var rowsCols = cells[i].content.$t.split(',');
+				
+				for(var j = 0; j< rowsCols.length; j++){
+					var pair = rowsCols[j].split(':');
+					dayEntry[pair[0].trim()] = pair[1].trim(); 
+				}
+				calendarEntry.push(dayEntry);
+				if(DEBUG) console.log("loaded dayEntry", dayEntry);
+			}
+			console.log(calendarEntry[3].month.split(" "));
+        	renderCalendarEntry(calendarEntry);
+		
+		}
+		
+		
+		});
+		
+		
 	
 });
 
@@ -37,23 +66,23 @@ function xmlRequestData(){
 	
 }
 
-function renderHTML(data) {
+function renderCalendarEntry(data) {
   var htmlString = "";
   
   var day, date, eventDetail, eventLocation, eventTime, eventName, month, year;
 
-  for(var i=0; i< data.numDays; i++){
+  for(var i=data.length-1; i>=0; i--){
 	  
-	  day = data.daysEntry[i].day;
-	  date = data.daysEntry[i].date;
-	  eventDetail = data.daysEntry[i].details;
-	  eventLocation = data.daysEntry[i].location;
-	  eventTime = data.daysEntry[i].time;
-	  eventName = data.daysEntry[i].event;
-	  month = data.daysEntry[i].month;
+	  day = data[i].day;
+	  date = parseInt(data[i].date);
+	  eventDetail = data[i].details;
+	  eventLocation = data[i].location;
+	  eventTime = data[i].time;
+	  eventName = data[i].event;
+	  month = data[i].month;
 	  
 	  year = ((month.split(" ")).length>=2) ? parseInt(month.split(" ")[1]) : currentYear;
-	  
+
 	  	  
 	  var description = [eventName, eventTime, eventLocation, eventDetail ];
 	  
@@ -107,7 +136,7 @@ function createDaysEntry(day,date,month,year, description){
 	$divContainer.append($divInfo);
 	
 	//adds a unique class to it 
-	$divContainer.attr({"class":"calendar_entries "+date+" "+month});
+	$divContainer.attr({"class":"calendar_entries "+date+" "+ getFullMonthName(monthOrder(month))});
 	
 	addDayInOrder($divContainer,year,month,date);
 	
@@ -161,7 +190,7 @@ function getMonth(year,month){
 	
 	var monthNum = monthOrder((month).split(" ")[0]);
 	var formattedMonthStr = getFullMonthName(monthNum)+" "+ year;
-	console.log(formattedMonthStr);
+	
 	var fromattedMonthDisplay = (year == currentYear) ? getFullMonthName(monthNum) :  formattedMonthStr;
 
 	
@@ -169,6 +198,7 @@ function getMonth(year,month){
 
 	
 	
+	//console.log("type_month calendar_entries " + formattedMonthStr);
 	//creates new month 
 	if($month.length==0){
 		
@@ -199,15 +229,14 @@ function getMonth(year,month){
 			var monthTempStr = s[2];
 			var yearTemp = parseInt(s[3]);
 			
+			if(DEBUG) console.log("entery "+ monthTempStr, getFullMonthName(monthNum),yearTemp,year, monthOrder(monthTempStr)> monthNum );
 			//checks year and month
 			if(yearTemp>year) continue;
 			if(yearTemp==year && monthOrder(monthTempStr)> monthNum) continue ;
 		
+			$month.after($('<div>', { "class" : ("type_month calendar_entries " + formattedMonthStr),
+								   html    : ('<span class="month">'+ fromattedMonthDisplay +'</span>')}));
 			
-			$month = addToDivAfter(
-					$month, 
-					{"class": ("type_month calendar_entries " + month)}, 
-					('<span class="month">'+fromattedMonthDisplay+'</span>') );
 			if(DEBUG) console.log("Month Created class "+ $month.attr('class'));
 			break;
 		}

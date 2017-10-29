@@ -22,30 +22,30 @@ $(function(){
 	
 	//request.send();
 	var JSONURL= 'https://spreadsheets.google.com/feeds/list/1vHC9mKler--bunAvBmumJqQ7-e_mb6K3P4fC1-njFVQ/1/public/basic?alt=json';
-	 $.ajax({
-        url: JSONURL,
-        success: function(data){
-            
-	
-			var calendarEntry = [];
-
-			var cells = data.feed.entry;
-			
-			for (var i = 0; i < cells.length; i++){
-				var dayEntry = new Object();
-				var rowsCols = cells[i].content.$t.split(',');
-				
-				for(var j = 0; j< rowsCols.length; j++){
-					var pair = rowsCols[j].split(':');
-					dayEntry[pair[0].trim()] = pair[1].trim(); 
-				}
-				calendarEntry.push(dayEntry);
-				if(DEBUG) console.log("loaded dayEntry", dayEntry);
-			}
-			
-        	renderCalendarEntry(calendarEntry);
+	$.ajax({
+	url: JSONURL,
+	success: function(data){
 		
+
+		var calendarEntry = [];
+
+		var cells = data.feed.entry;
+		
+		for (var i = 0; i < cells.length; i++){
+			var dayEntry = new Object();
+			var rowsCols = cells[i].content.$t.split(',');
+			
+			for(var j = 0; j< rowsCols.length; j++){
+				var pair = rowsCols[j].split(':');
+				dayEntry[pair[0].trim()] = pair[1].trim(); 
+			}
+			calendarEntry.push(dayEntry);
+			if(DEBUG) console.log("loaded dayEntry", dayEntry);
 		}
+		
+		renderCalendarEntry(calendarEntry);
+
+	}
 		
 		
 		});
@@ -87,7 +87,7 @@ function renderCalendarEntry(data) {
 	  
 	
 	  	  
-	  var description = [eventName, eventTime, eventLocation, eventDetail ];
+	  var description = [eventName, eventLocation, eventTime, eventDetail ];
 	  console.log("event created: ", day,date,month, year, description);
 	  createDaysEntry(day,date,month, year, createDescription(description));
 	  

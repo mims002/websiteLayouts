@@ -21,7 +21,8 @@ $(function(){
 	//request.onload = xmlRequestData;
 	
 	//request.send();
-	var JSONURL= 'https://spreadsheets.google.com/feeds/list/1vHC9mKler--bunAvBmumJqQ7-e_mb6K3P4fC1-njFVQ/1/public/basic?alt=json';
+	var JSONURL= 'https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data.json';
+	//var JSONURL= 'https://spreadsheets.google.com/feeds/list/1vHC9mKler--bunAvBmumJqQ7-e_mb6K3P4fC1-njFVQ/1/public/basic?alt=json';
 	$.ajax({
 	url: JSONURL,
 	success: function(data){

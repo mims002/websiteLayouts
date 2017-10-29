@@ -11,6 +11,7 @@ This is a card style calendar layout consisting of a month, date, and descriptio
 Use the given template and change fields as nessasary  
 The database must create a json file example below uses google sheets 
 <img src="Sample%20Images/sheets.PNG" height="400px"></img>
+<img src="Sample%20Images/sheets2.PNG" height="400px"></img>
  
 Change the Sample items in the code. Month can have a year but it is not nessesary if the year is the same as the current year. Date and numDays have to be ints. numDays are how many of the data enteries you want showing. Link the database created json file in `line 17` of the script.js file.
 

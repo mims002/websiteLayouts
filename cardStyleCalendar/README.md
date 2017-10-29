@@ -9,33 +9,9 @@ Created by Mrinnmoy Mondal
 This is a card style calendar layout consisting of a month, date, and description. It uses a resposive layout. Calendar's entries are dynamically added from a database. It offers smart checks incase the database was not correctly implemented. It will sort all dates by year, month and then date. The past dates will be greyed out. Years that are not current will have the year listed. 
 ## How to use 
 Use the given template and change fields as nessasary  
-The database must create a json file 
-```{
-	"numDays" : 2, 
-	
-	"daysEntry": [
-		{
-			"month":"September 2016",
-			"day" : "Mon",
-			"date": 19,
-			"event":"Event",
-			"time": "3-4pm",
-			"location": "Place",
-			"details" :"more info" 
-			
-		},
-		{	
-			"month":"September",
-			"day" : "Tue",
-			"date": 16,
-			"event":"Event",
-			"time": "3-4pm",
-			"location": "Place",
-			"details" :"more info" 
-			
-		}
-}
-```  
+The database must create a json file example below uses google sheets 
+<img src="Sample%20Images/sheets.PNG" height="400px"></img>
+ 
 Change the Sample items in the code. Month can have a year but it is not nessesary if the year is the same as the current year. Date and numDays have to be ints. numDays are how many of the data enteries you want showing. Link the database created json file in `line 17` of the script.js file.
 
 ## Testing

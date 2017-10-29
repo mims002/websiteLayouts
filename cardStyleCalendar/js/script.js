@@ -25,7 +25,7 @@ $(function(){
 	 $.ajax({
         url: JSONURL,
         success: function(data){
-            console.log(data);
+            
 	
 			var calendarEntry = [];
 
@@ -42,7 +42,7 @@ $(function(){
 				calendarEntry.push(dayEntry);
 				if(DEBUG) console.log("loaded dayEntry", dayEntry);
 			}
-			console.log(calendarEntry[3].month.split(" "));
+			
         	renderCalendarEntry(calendarEntry);
 		
 		}
@@ -72,7 +72,9 @@ function renderCalendarEntry(data) {
   var day, date, eventDetail, eventLocation, eventTime, eventName, month, year;
 
   for(var i=data.length-1; i>=0; i--){
-	  
+	  //does not print if the display says no 
+	  if(data[i].display != null && data[i].display.charAt(0).toLowerCase()== 'n' ) continue;
+	 
 	  day = data[i].day;
 	  date = parseInt(data[i].date);
 	  eventDetail = data[i].details;
@@ -82,11 +84,14 @@ function renderCalendarEntry(data) {
 	  month = data[i].month;
 	  
 	  year = ((month.split(" ")).length>=2) ? parseInt(month.split(" ")[1]) : currentYear;
-
+	  
+	
 	  	  
 	  var description = [eventName, eventTime, eventLocation, eventDetail ];
-	  
+	  console.log("event created: ", day,date,month, year, description);
 	  createDaysEntry(day,date,month, year, createDescription(description));
+	  
+	  if(DEBUG) console.log("-----finished loading-----");
 	  
   }
   
@@ -112,13 +117,13 @@ function createDaysEntry(day,date,month,year, description){
 	var $divContainer = $("<div>", {"class":"calendar_entries"});
 	var $divDate = $("<div>", {"class":"calendar_entries_left"});
 	var $divInfo = $("<div>", {"class":"calendar_entries_right"});
-	console.log( date);
+	
 	//greys out the boc if the month or day has passed
 	if( (year < currentYear) ||
 		(year == currentYear && monthOrder(month.split(" ")[0]) < currentMonth)  || 
 		(year == currentYear && monthOrder(month.split(" ")[0]) == currentMonth && date < currentDay) ){
 			
-			$divContainer.css("color","rgba(0,0,0,0.50)");
+			$divContainer.css("color","rgba(0,0,0,0.25)");
 		}
 		
 	
@@ -136,7 +141,7 @@ function createDaysEntry(day,date,month,year, description){
 	$divContainer.append($divInfo);
 	
 	//adds a unique class to it 
-	$divContainer.attr({"class":"calendar_entries "+date+" "+ getFullMonthName(monthOrder(month))});
+	$divContainer.attr({"class":"calendar_entries "+date+" "+ getFullMonthName(monthOrder(month))+" "+ year});
 	
 	addDayInOrder($divContainer,year,month,date);
 	
@@ -151,11 +156,20 @@ function addDayInOrder($divContainer,year, month, date){
 	//adds the month and return the div
 	var $parentMonth = getMonth(year,month);
 	
+	//greys out the block if the month or day has passed
+	var t = $parentMonth.attr('class').split(" ");
+	var year= parseInt(t[3]);
+	if( (year < currentYear) ||
+		(year == currentYear && monthOrder(t[2]) < currentMonth)){
+			
+			$parentMonth.find('span').css("color","rgba(0,0,0,0.25)");
+		}
+	
 	
 	var $prevdate = $parentMonth;
 	
 	//starts at the month and finds the right place to place the day 
-	for(var i = $parentMonth.index()+1; i< $("#calendar_inner").children().length; i++){
+	for(var i = $parentMonth.index()+1; i<$("#calendar_inner").children().length; i++){
 		//gets the previous date as to which it will be entered after 
 		$prevdate = $("#calendar_inner").children().eq(i);
 		var s = $prevdate.attr('class').split(" ");
@@ -197,8 +211,7 @@ function getMonth(year,month){
 	var $month = $("div."+"type_month."+getFullMonthName(monthNum)+"."+ year+".calendar_entries");
 
 	
-	
-	//console.log("type_month calendar_entries " + formattedMonthStr);
+
 	//creates new month 
 	if($month.length==0){
 		
@@ -229,12 +242,12 @@ function getMonth(year,month){
 			var monthTempStr = s[2];
 			var yearTemp = parseInt(s[3]);
 			
-			if(DEBUG) console.log("entery "+ monthTempStr, getFullMonthName(monthNum),yearTemp,year, monthOrder(monthTempStr)> monthNum );
+			if(DEBUG) console.log("entery "+s,"--",yearTemp,year);
 			//checks year and month
 			if(yearTemp>year) continue;
 			if(yearTemp==year && monthOrder(monthTempStr)> monthNum) continue ;
 		
-			$month.after($('<div>', { "class" : ("type_month calendar_entries " + formattedMonthStr),
+			$month.after($month=$('<div>', { "class" : ("type_month calendar_entries " + formattedMonthStr),
 								   html    : ('<span class="month">'+ fromattedMonthDisplay +'</span>')}));
 			
 			if(DEBUG) console.log("Month Created class "+ $month.attr('class'));
@@ -252,23 +265,7 @@ function getMonth(year,month){
 	
 }
 
-function addToDivAfter($div, attr, htmlString){
-	var container = $("<div>");
-	container.attr(attr);
-	container.html(htmlString);
-	$div.after(container);
-	
-	return container;
-}
 
-function addToDivBefore($div, attr, htmlString){
-	var container = $("<div>");
-	container.attr(attr);
-	container.html(htmlString);
-	$div.before(container);
-	
-	return container;
-}
 
 function monthOrder(m){
 	//safety check 

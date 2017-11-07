@@ -1,0 +1,131 @@
+/* Style fle- CSS */
+/*v1.2*/
+
+/*Entire page attributes*/
+body{
+	background-color: #F0F7FA;
+	
+	padding-bottom: 200px;
+	
+	margin: 0 auto;
+	
+	font-family: 'Ubuntu', sans-serif;
+	
+}
+.float_right{
+	float: right;
+}
+.float_left{
+	float: left;
+}
+.impact{
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.depact{
+	font-size: 1.0em;
+}
+.person_container{
+	display: incline-block;
+	width: 300px;
+	margin: 0 auto;
+
+}
+
+/*creates the person outer container*/ 
+.person{
+	width: 250px;
+	height:250px;
+	border: solid 0px black;
+	
+	margin: 20px ;
+	
+	border-radius: 50%; 
+	overflow:  hidden;
+		
+	
+	background-size: cover;
+	background-position: center;
+	
+	position: relative;
+	float: left;
+	
+}
+
+.description_person{
+	
+	height: 50%;
+	width: 100%;
+	top: 70%;
+	position: absolute;
+	
+	text-align: center;
+	color: white;
+	
+	background-color: rgba(0,0,0,0.5);
+	
+}
+
+
+@media screen and (max-width : 590px){
+	.person{
+		
+		margin: 0px ;
+		margin-bottom: 20px ;
+
+		
+	}
+
+}
+.background_description {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+
+.foreground_description {
+  display: none;
+  position: fixed;
+
+  width: 50%;
+  background-color: white;
+  border-radius: 10%;
+  z-index: 2;
+  overflow: auto;
+  
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+@media screen and (max-width : 360px){
+	.foreground_description {
+	  width: 80%;
+
+	}
+}
+@media screen and (max-width : 360px){
+	body{
+		font-size:80%;
+	}
+	.person{
+		width: 200px;
+		height:200px;
+		margin-left:25px;
+	}
+	
+	.foreground_description {
+	  width: 90%;
+
+	}
+}
+

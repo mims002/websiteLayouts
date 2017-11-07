@@ -2,7 +2,7 @@
 Created by Mrinnmoy Mondal 
 
 
-## Card Style Info [Sample Page](https://mims002.github.io/websiteLayouts/cardStyleInfo/)
+## Card Style Info [Sample Page](https://mims002.github.io/websiteLayouts/peopleDescription/)
 <img src="Sample%20Images/mobile.PNG" height="400px"></img>
 <img src="Sample%20Images/portrait.PNG" width="500px"></img>
 ## Description

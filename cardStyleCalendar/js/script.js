@@ -23,6 +23,7 @@ $(function(){
 	//request.send();
 	var JSONURL= 'https://mims002.github.io/websiteLayouts/cardStyleCalendar/json/data.json';
 	//var JSONURL= 'https://spreadsheets.google.com/feeds/list/1vHC9mKler--bunAvBmumJqQ7-e_mb6K3P4fC1-njFVQ/1/public/basic?alt=json';
+	//loads the data from the google sheets
 	$.ajax({
 	url: JSONURL,
 	success: function(data){

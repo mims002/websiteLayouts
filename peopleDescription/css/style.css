@@ -67,16 +67,7 @@ body{
 }
 
 
-@media screen and (max-width : 590px){
-	.person{
-		
-		margin: 0px ;
-		margin-bottom: 20px ;
 
-		
-	}
-
-}
 .background_description {
   display: none;
   position: fixed;
@@ -107,12 +98,26 @@ body{
 
 }
 
-@media screen and (max-width : 360px){
+@media screen and (max-width : 800px){
 	.foreground_description {
 	  width: 80%;
 
 	}
+
 }
+@media screen and (max-width : 575px){
+	.person{
+		
+		margin: 0px ;
+		margin-bottom: 20px ;
+	}
+	.foreground_description {
+	  width: 95%;
+
+	}
+
+}
+
 @media screen and (max-width : 360px){
 	body{
 		font-size:80%;

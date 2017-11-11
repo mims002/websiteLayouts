@@ -43,7 +43,7 @@ body{
 	border-radius: 50%; 
 	overflow:  hidden;
 		
-	
+	box-shadow: 0px 0px 10px black;
 	background-size: cover;
 	background-position: center;
 	
@@ -51,7 +51,10 @@ body{
 	float: left;
 	
 }
-
+.person:hover{
+	box-shadow: 0px 0px 30px black;
+		
+}
 .description_person{
 	
 	height: 50%;

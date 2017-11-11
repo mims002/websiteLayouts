@@ -103,6 +103,7 @@ function createPerson(name,position,description,url){
 		$(".loading").remove();
 		
 	}
+	if(name.length>10) name = name.substring(0,13)+"..";
 	img.src = url;
 	
 	$person.append($title);
@@ -192,7 +193,7 @@ function createDescription(data, index){
 	var s = "<div style='margin: 10px; padding-bottom:15px;'>Name: <br><span class='impact'>"+ data[index].name+ "</span><br>"+
 			"Position: <br><span class='impact'>"+ data[index].position+ "</span><br>"+
 			"<p style='margin-top:1em; text-align: left;'>"+
-			"<b>Description: </b><span class='depact'>"+ data[index].description+ "</span></p></div>";
+			"<span class='depact'>"+ data[index].description+ "</span></p></div>";
 	return s;
 }
 //removes the current displaying description 

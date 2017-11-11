@@ -9,6 +9,21 @@
 This is a custom created home page with a simple easy to understand layout. It features a slideshow with any size image that will be up scaled using a complex algorithm. It utilizes a resposive layout that will scale to the smallest displays and to the largest displays. The slide show uses a 2s fade out transition via CSS for gpu accelerated animation and each picture stays there for 6s. 
 #### Click here for [more info](/HomePageSlideShow/)
 
+## Card Style Info [Sample Page](https://mims002.github.io/websiteLayouts/peopleDescription/)
+<img src="Sample%20Images/mobile.PNG" width="400px"></img>
+<img src="Sample%20Images/mobile2.PNG" width="400px"></img>
+<img src="Sample%20Images/desktop.PNG" height="400px"></img>
+<img src="Sample%20Images/desktop2.PNG" height="400px"></img>
+## Description
+
+## How to use 
+
+
+## Testing
+This layout has been tested on Chrome v60 on mobile and Desktop. To run the test click on the sample page and run it on a broswer. If everything loads it has passed. 
+
+
+
 ## Card Style Calendar (w/auto sort & w/database support) [Sample Page](https://mims002.github.io/websiteLayouts/cardStyleCalendar/)
 <img src="cardStyleCalendar/Sample%20Images/mobile.PNG" height="400px"></img>
 <img src="cardStyleCalendar/Sample%20Images/portrait.PNG" height="400px"></img>

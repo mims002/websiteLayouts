@@ -10,10 +10,10 @@ This is a custom created home page with a simple easy to understand layout. It f
 #### Click here for [more info](/HomePageSlideShow/)
 
 ## Card Style Info [Sample Page](https://mims002.github.io/websiteLayouts/peopleDescription/)
-<img src="Sample%20Images/mobile.PNG" width="400px"></img>
-<img src="Sample%20Images/mobile2.PNG" width="400px"></img>
-<img src="Sample%20Images/desktop.PNG" height="400px"></img>
-<img src="Sample%20Images/desktop2.PNG" height="400px"></img>
+<img src="peopleDescription/Sample%20Images/mobile.PNG" width="250px"></img>
+<img src="peopleDescription/Sample%20Images/mobile2.PNG" width="250px"></img>
+<img src="peopleDescription/Sample%20Images/desktop.PNG" height="400px"></img>
+<img src="peopleDescription/Sample%20Images/desktop2.PNG" height="400px"></img>
 ## Description
 
 ## How to use 

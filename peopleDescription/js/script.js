@@ -8,9 +8,9 @@ $(function(){
 	if($(".loading").length ==0)
 		$("body").append("<p class='loading'>...loading</p>");
 	//google sheets json file
-	//https://docs.google.com/spreadsheets/d/1Wd_MUhy01g8zQcxUitY9akCsC6M9wvKokjZRUGEwkHI/edit?usp=sharing
-	//var JSONURL= 'https://spreadsheets.google.com/feeds/list/1Wd_MUhy01g8zQcxUitY9akCsC6M9wvKokjZRUGEwkHI/1/public/basic?alt=json';
-	var JSONURL= 'https://spreadsheets.google.com/feeds/list/1Wd_MUhy01g8zQcxUitY9akCsC6M9wvKokjZRUGEwkHI/1/public/basic?alt=json';
+	//https://docs.google.com/spreadsheets/d/<ID>/edit?usp=sharing
+	//var JSONURL= 'https://spreadsheets.google.com/feeds/list/<ID>/1/public/basic?alt=json';
+	var JSONURL= 'https://mims002.github.io/websiteLayouts/peopleDescription/json/data.json';
 	
 	//loads the people data
 	$.ajax({

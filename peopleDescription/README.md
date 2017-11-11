@@ -3,8 +3,10 @@ Created by Mrinnmoy Mondal
 
 
 ## Card Style Info [Sample Page](https://mims002.github.io/websiteLayouts/peopleDescription/)
-<img src="Sample%20Images/mobile.PNG" height="400px"></img>
-<img src="Sample%20Images/portrait.PNG" width="500px"></img>
+<img src="Sample%20Images/mobile.PNG" width="400px"></img>
+<img src="Sample%20Images/mobile2.PNG" width="400px"></img>
+<img src="Sample%20Images/desktop.PNG" height="500px"></img>
+<img src="Sample%20Images/desktop2.PNG" height="500px"></img>
 ## Description
 This is a card style info layout consisting of a image, description and a external link button. It uses a resposive layout wirh CSS grid. Not all broswers may support it. The image uses the full width of the display.This can be used to show different organizations, people, events, etc.
 ## How to use 

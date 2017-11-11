@@ -8,7 +8,9 @@ $(function(){
 	if($(".loading").length ==0)
 		$("body").append("<p class='loading'>...loading</p>");
 	//google sheets json file
-	var JSONURL= 'https://spreadsheets.google.com/feeds/list/19jaehg5ALj3PHcln7MprnrC_NnZNTv6-Vs7x6KQrQms/1/public/basic?alt=json';
+	//https://docs.google.com/spreadsheets/d/1Wd_MUhy01g8zQcxUitY9akCsC6M9wvKokjZRUGEwkHI/edit?usp=sharing
+	//var JSONURL= 'https://spreadsheets.google.com/feeds/list/1Wd_MUhy01g8zQcxUitY9akCsC6M9wvKokjZRUGEwkHI/1/public/basic?alt=json';
+	var JSONURL= 'https://spreadsheets.google.com/feeds/list/1Wd_MUhy01g8zQcxUitY9akCsC6M9wvKokjZRUGEwkHI/1/public/basic?alt=json';
 	
 	//loads the people data
 	$.ajax({
@@ -50,7 +52,7 @@ $(function(){
 		});
 		
 })
-//return the url to the image by extracting ID
+//return the url to the image by extracting ID for google drive images 
 function getImageUrl(s){
 	if(s==null) return "";
 	s = s.split('/');
@@ -72,7 +74,9 @@ function renderPeopleEntry(data){
 		name = data[i].name;
 		position= data[i].position;
 		description= data[i].description;
-		url = getImageUrl(data[i].pictureurl);
+		url = data[i].pictureurl;
+		//for google drive images
+		//url = getImageUrl(data[i].pictureurl);
 		
 		if(DEBUG) console.log(name,position,description);
 		
